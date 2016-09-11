@@ -1,6 +1,30 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+class Bot extends React.Component {
+  constructor() {
+    super()
+    this.state = { mountedComponent: null}
+    this.closeWindow = this.closeWindow.bind(this)
+  }
+  closeWindow() {
+    if (this.state.mountedComponent) {
+      this.state.mountedComponent = null
+    } else {
+      this.state.mountedComponent = <BotContent/>
+    }
+    this.forceUpdate()
+  }
+  render() {
+    return (
+      <div id="botBox">
+        <BotHeader handleCloseWindow={this.closeWindow}/>
+        {this.state.mountedComponent}
+      </div>
+    )
+  }
+}
+
 
 class BotHeader extends React.Component {
   constructor() {
@@ -8,22 +32,7 @@ class BotHeader extends React.Component {
   }
   render() {
     return (
-      <div id="botHeader"> Bot </div>
-    )
-  }
-}
-
-
-class Bot extends React.Component {
-  constructor() {
-    super()
-  }
-  render() {
-    return (
-      <div id="botBox">
-        <BotHeader name="KTERI"> </BotHeader>
-        <BotContent/>
-      </div>
+      <div id="botHeader" onClick={this.props.handleCloseWindow}> Brad's Bot</div>
     )
   }
 }

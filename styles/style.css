@@ -18,12 +18,11 @@
     float: none;
 }
 
-#headerName, #headerContact {
+#headerName, #headerContact, #middleOptions {
     margin: 0;
     padding: 0;
     height: 100%;
     font-size: 35px;
-    display: inline;
 }
 #headerName {
     float: left;
@@ -33,11 +32,10 @@
 }
 
 #middleOptions {
-    display: block;
-    left: 50%;
+    position: absolute;
+    margin-left: 50%;
 }
 #headerItem {
-    height: 100%;
     float: left;
     display: block;
     color: grey;
@@ -69,7 +67,6 @@
     right: 0;
     background-color: #0066ff;
     width: 350px;
-    height: 400px;
     box-shadow: 0px 0px 70px;
     border-radius: 25px;
 }
@@ -80,12 +77,16 @@
     margin:auto;
     text-align: center;
     padding:5px;
+    font-family: 'MyHeaderFont', Fallback, sans-serif;
+    font-size: 30px;
+    color: white;
 }
 
 #botContent {
     margin-left: 20px;
     margin-right: 20px;
-    height: 275px;
+    height: 200px;
+    margin-bottom: 50px;
     background-color: white;
 }
 
@@ -97,47 +98,6 @@
 #inputBox {
     position: fixed;
     bottom: 0;
-    width: 100%;
     margin-bottom: 20px;
+    margin-right: 20px;
 }
-
-
-
-
-
-/* Bot section of the homepage */
-/*#botBox {*/
-    /*margin-top: 25px;*/
-    /*border-style: solid;*/
-    /*height: 800px;*/
-    /*background: linear-gradient(245deg, #d4e7e9, #76efed, #6da7a6);*/
-    /*background-size: 600% 600%;*/
-    /*-webkit-animation: AnimationName 100s ease infinite;*/
-    /*animation: AnimationName 100s ease infinite;*/
-/*}*/
-
-/*#homeTitle {*/
-    /*text-align: center;*/
-    /*font-family: 'MyBotFont', Fallback, sans-serif;*/
-    /*font-size: 35px;*/
-/*}*/
-
-/*#questionInput {*/
-    /*width: calc(100px + 40%);*/
-    /*display: block;*/
-    /*margin: 10px auto;*/
-    /*padding: 10px;*/
-    /*border: solid 1px #dcdcdc;*/
-    /*transition: box-shadow 0.3s, border 0.3s;*/
-    /*font-size: 20px;*/
-/*}*/
-/*#questionInput input[type="text"]:focus,*/
-/*#questionInput input[type="text"].focus {*/
-    /*border: solid 1px #707070;*/
-    /*box-shadow: 0 0 10px 5px #969696;*/
-/*}*/
-
-/*#submit {*/
-    /*display: block;*/
-    /*margin: 0 auto;*/
-/*}*/
