@@ -1,6 +1,5 @@
 var webpack = require('webpack')
 const path = require('path')
-__dirname = path.resolve()
 
 module.exports = {
   entry: './app/main.jsx',
