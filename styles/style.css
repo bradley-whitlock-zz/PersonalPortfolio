@@ -11,6 +11,50 @@
     src:url('./fonts/HelloBoomerang.ttf')
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#landingBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    float: left;
+}
+
+#powerLogo {
+    margin-top: 20%;
+    margin-left: calc(50% - 100px);
+    width: 200px;
+    height: auto;
+    left: calc(50% - 100px);
+    top: calc(50% - 175px);
+    -webkit-filter: drop-shadow(5px 5px 5px lightgrey);
+    filter: drop-shadow(5px 5px 5px lightgrey);
+}
+
+#landingMessage, #continueMessage {
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+#landingMessage {
+    /*margin-top: calc(50% - 50px);*/
+    font-size: 50px;
+}
+
+#continueMessage {
+    /*margin-top: calc(50% + 50px);*/
+    font-size: 20px;
+}
 #header {
     font-family: 'MyHeaderFont', Fallback, sans-serif;
     height: 35px;
@@ -34,16 +78,21 @@
 #middleOptions {
     position: absolute;
     margin-left: 50%;
+    height: 35px;
 }
-#headerItem {
+#headerItem, #dropItem {
     float: left;
     display: block;
     color: grey;
     font-size: 20px;
-    text-align: center;
+    text-align: left;
     padding: 14px 16px;
 }
 #headerItem:hover {
+    color: lightgray;
+}
+
+#dropDownLinkedIn:hover, #dropDownGithub:hover, #dropDownEmail:hover {
     color: lightgray;
 }
 
@@ -101,3 +150,41 @@
     margin-bottom: 20px;
     margin-right: 20px;
 }
+
+/*#dropbtn {*/
+    /*background-color: #4CAF50;*/
+    /*color: white;*/
+    /*padding: 16px;*/
+    /*font-size: 16px;*/
+    /*border: none;*/
+    /*cursor: pointer;*/
+/*}*/
+
+/*#dropbtn:hover, #dropbtn:focus {*/
+    /*background-color: #3e8e41;*/
+/*}*/
+
+/*.dropdown {*/
+    /*position: relative;*/
+    /*display: inline-block;*/
+/*}*/
+
+/*.dropdown-content {*/
+    /*display: none;*/
+    /*position: absolute;*/
+    /*background-color: #f9f9f9;*/
+    /*min-width: 160px;*/
+    /*overflow: auto;*/
+    /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+/*}*/
+
+/*.dropdown-content a {*/
+    /*color: black;*/
+    /*padding: 12px 16px;*/
+    /*text-decoration: none;*/
+    /*display: block;*/
+/*}*/
+
+/*.dropdown a:hover {background-color: #f1f1f1}*/
+
+/*.show {display:block;}*/
