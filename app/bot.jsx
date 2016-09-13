@@ -9,11 +9,10 @@ class Bot extends React.Component {
   }
   closeWindow() {
     if (this.state.mountedComponent) {
-      this.state.mountedComponent = null
+      this.setState({ mountedComponent: null })
     } else {
-      this.state.mountedComponent = <BotContent/>
+      this.setState({ mountedComponent: <BotContent/> })
     }
-    this.forceUpdate()
   }
   render() {
     return (

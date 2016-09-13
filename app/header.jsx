@@ -6,15 +6,37 @@ class Header extends React.Component {
   }
   render() {
     return (
-      <div id="header">
-        <HeaderName name="Bradley Whitlock" link="redirect to homePage"> </HeaderName>
-        <div id="middleOptions">
-          <ListRedirect title="Projects" link="redirect to Projects"> </ListRedirect>
-          <ListRedirect title="Experience" link="redirect to Contact Me"> </ListRedirect>
-          <ListLink title="Links"> </ListLink>
+      <div id="homepage">
+        <div id="header">
+          <HeaderName name="Bradley Whitlock" link="redirect to homePage"> </HeaderName>
+          <div id="middleOptions">
+            <ListRedirect title="Projects" link="redirect to Projects"> </ListRedirect>
+            <ListRedirect title="Experience" link="redirect to Contact Me"> </ListRedirect>
+            <ListLink title="Links"> </ListLink>
+          </div>
+          <HeaderContact name="Contact Now" link="redirect to contact me page"> </HeaderContact>
         </div>
-        <HeaderContact name="Contact Now" link="redirect to contact me page"> </HeaderContact>
+        <h1 id="mainTitle"> Passionate. <br/> Enthusiastic. <br/> Creative. </h1>
+        <div id="buttonOptions">
+        <MainButton name="About Me" link="redirect to the About Me Page" identity="aboutMeButton"/>
+        <MainButton name="Contact Me" link="redirect to the Contact Page" identity="contactMeButton"/>
+          </div>
       </div>
+    )
+  }
+}
+
+class MainButton extends React.Component {
+  constructor() {
+    super()
+    this.update = this.update.bind(this)
+  }
+  update() {
+    console.log(this.props.link)
+  }
+  render() {
+    return (
+      <div id={this.props.identity} onClick={this.update}>{this.props.name}</div>
     )
   }
 }

@@ -8,24 +8,32 @@ import Landing from './landing'
 class App extends React.Component {
   constructor() {
     super()
-    this.state = { initPage: <Landing/>}
+    this.update = this.update.bind(this)
+    this.state = { initPage: <Landing clickPowerButton={this.update}/>}
   }
   update() {
-    this.state.initPage = <div>
-      <Header/>
-      <Bot/>
+    this.setState({ initPage:
+      <div>
+        <Header/>
+        {/*<Bot/>*/}
     </div>
-    this.forceUpdate()
+    })
   }
   render(){
     return (
-    <div onClick={this.update.bind(this)}>
-      {this.state.initPage}
+    <div>
+        <Header/>
+        {/*<Bot/>*/}
     </div>
     )
   }
 }
-
+/*
+<div>
+{this.state.initPage}
+</div>
+*/
+//onClick={this.update.bind(this)}
 ReactDOM.render(<App/>, document.getElementById('reactRoot'))
 
 // React.render(
