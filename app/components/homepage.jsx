@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router'
 
-class Header extends React.Component {
+class HomePage extends React.Component {
   constructor() {
     super()
   }
@@ -10,16 +11,16 @@ class Header extends React.Component {
         <div id="header">
           <HeaderName name="Bradley Whitlock" link="redirect to homePage"> </HeaderName>
           <div id="middleOptions">
-            <ListRedirect title="Projects" link="redirect to Projects"> </ListRedirect>
-            <ListRedirect title="Experience" link="redirect to Contact Me"> </ListRedirect>
-            <ListLink title="Links"> </ListLink>
+            <ListRedirect name="Projects" link="redirect to Projects"> </ListRedirect>
+            <ListRedirect name="Experience" link="redirect to Contact Me"> </ListRedirect>
+            <ListLink name="Links"> </ListLink>
           </div>
           <HeaderContact name="Contact Now" link="redirect to contact me page"> </HeaderContact>
         </div>
         <h1 id="mainTitle"> Passionate. <br/> Enthusiastic. <br/> Creative. </h1>
         <div id="buttonOptions">
-        <MainButton name="About Me" link="redirect to the About Me Page" identity="aboutMeButton"/>
-        <MainButton name="Contact Me" link="redirect to the Contact Page" identity="contactMeButton"/>
+        <MainButton name="About Me" link="/about" identity="aboutMeButton"/>
+        <MainButton name="Contact Me" link="/contact" identity="contactMeButton"/>
           </div>
       </div>
     )
@@ -29,14 +30,10 @@ class Header extends React.Component {
 class MainButton extends React.Component {
   constructor() {
     super()
-    this.update = this.update.bind(this)
-  }
-  update() {
-    console.log(this.props.link)
   }
   render() {
     return (
-      <div id={this.props.identity} onClick={this.update}>{this.props.name}</div>
+        <Link to={this.props.link} id={this.props.identity}> {this.props.name}</Link>
     )
   }
 }
@@ -49,18 +46,14 @@ class ListLink extends React.Component {
     this.clearOptions = this.clearOptions.bind(this)
   }
   showOptions() {
-    console.log('show options')
-    this.state.hovered = <ListDropDown/>
-    this.forceUpdate()
+    this.setState ({ hovered : <ListDropDown/> })
   }
   clearOptions() {
-    console.log('clear options')
-    this.state.hovered = null
-    this.forceUpdate()
+    this.setState ({ hovered : null })
   }
   render() {
     return (
-      <div id="dropItem" onMouseOver={this.showOptions} onMouseLeave={this.clearOptions}>{this.props.title}
+      <div id="dropItem" onMouseOver={this.showOptions} onMouseLeave={this.clearOptions}>{this.props.name}
         {this.state.hovered}
       </div>
     );
@@ -69,19 +62,14 @@ class ListLink extends React.Component {
 
 class ListDropDown extends React.Component {
   constructor() {
-    // we use super so that we can access "this"
     super();
-    this.handleClick = this.handleClick.bind(this);
-  }
-  handleClick() {
-    console.log(this.props.link)
   }
   render() {
     return (
       <div>
-        <li onClick={console.log('hi')} id="dropDownLinkedIn">LinkedIn</li>
-        <li onClick={console.log('hello world')} id="dropDownGithub">Github</li>
-        <li onClick={console.log('hello world')} id="dropDownEmail">Email</li>
+        <Link to="/about" id="dropDownLinkedIn">LinkedIn</Link>
+        <Link to="/about" id="dropDownGithub">Github</Link>
+        <Link to="/about" id="dropDownEmail">Email</Link>
       </div>
     );
   }
@@ -89,16 +77,11 @@ class ListDropDown extends React.Component {
 
 class ListRedirect extends React.Component {
   constructor() {
-    // we use super so that we can access "this"
     super();
-    this.handleClick = this.handleClick.bind(this);
-  }
-  handleClick() {
-    console.log(this.props.link)
   }
   render() {
     return (
-      <li onClick={this.handleClick} id="headerItem">{this.props.title}</li>
+      <Link to={this.props.link} id="headerItem"> {this.props.name}</Link>
     );
   }
 }
@@ -135,4 +118,4 @@ class HeaderContact extends React.Component {
 
 
 
-export default Header
+export default HomePage

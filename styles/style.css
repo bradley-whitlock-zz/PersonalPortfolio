@@ -96,6 +96,7 @@ html, body {
     height: 35px;
 }
 #headerItem, #dropItem {
+    text-decoration: none;
     float: left;
     display: block;
     color: grey;
@@ -116,8 +117,10 @@ html, body {
 }
 
 #aboutMeButton, #contactMeButton {
-    display: inline-block;
     color: white;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
     border: solid;
     padding: 10px 10px 10px 10px;
     border-color: ghostwhite;
@@ -133,11 +136,15 @@ html, body {
     color: lightgray;
 }
 
+#dropDownLinkedIn, #dropDownGithub, #dropDownEmail {
+    display: block;
+    color: grey;
+    text-decoration: none;
+}
 #dropDownLinkedIn:hover, #dropDownGithub:hover, #dropDownEmail:hover {
     color: lightgray;
 }
 
-#main
 
 @-webkit-keyframes AnimationName {
     0%{background-position:97% 0%}
