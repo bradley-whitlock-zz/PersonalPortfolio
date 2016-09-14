@@ -1,29 +1,33 @@
 {
-  "name": "react_introduction",
+  "name": "personal_portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "Brad's personal website",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bwhitty6/personal-website"
   },
-  "author": "",
+  "scripts": {
+    "start": "webpack && nodemon public/express",
+    "build": "webpack --progress --colors"
+  },
+  "author": "Bradley Whitlock",
   "license": "ISC",
   "dependencies": {
-    "babel": "^6.5.2",
+    "babel-cli": "^6.5.2",
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
-    "jquery": "^3.1.0",
-    "node-sass": "^3.9.3",
+    "body-parser": "^1.15.2",
+    "cli-color": "^1.1.0",
+    "express": "^4.14.0",
+    "nodemon": "^1.10.2",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-hot-loader": "^3.0.0-beta.3",
     "react-native": "^0.30.0",
     "react-router": "^2.8.0",
-    "reactcss": "^1.0.7",
-    "sass-loader": "^4.0.2",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   }

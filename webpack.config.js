@@ -1,36 +1,24 @@
 var webpack = require('webpack')
-const path = require('path')
 
 module.exports = {
-  entry: './app/main.jsx',
+  entry: [
+    './app/app.jsx'
+  ],
   output: {
-    path: './',
-    filename: 'bundle.js'
-  },
-  devServer: {
-    inline: true,
-    port: 8080
+    path: './public',
+    filename: 'bundle.js',
   },
   resolve: {
-    extensions: ['', '.js', '.jsx', '.css']
+    extensions: ['', '.js', '.jsx', '.json']
   },
   module : {
     loaders : [
       {
-        test : /\.jsx$/,
+        test: /\.jsx$/,
         exclude: /node_modules/,
-        loader : 'babel',
-        query: {
-          presets: ['es2015', 'react']
-        }
+        loader: 'babel',
+        // presets: ['es2015', 'react', 'stage-0']
       }
     ]
   },
-  plugins: [
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery'
-    })
-  ]
 };

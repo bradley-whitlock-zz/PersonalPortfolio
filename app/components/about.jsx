@@ -2,7 +2,11 @@ import React from 'react'
 
 class About extends React.Component {
   constructor(){
+    console.log('in the about constructor')
     super()
+  }
+  componentDidMount() {
+    console.log('YESSSSS')
   }
   render(){
     return(

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router'
+import { Link, RouteHandler } from 'react-router'
 
 class HomePage extends React.Component {
   constructor() {
@@ -11,29 +11,18 @@ class HomePage extends React.Component {
         <div id="header">
           <HeaderName name="Bradley Whitlock" link="redirect to homePage"> </HeaderName>
           <div id="middleOptions">
-            <ListRedirect name="Projects" link="redirect to Projects"> </ListRedirect>
-            <ListRedirect name="Experience" link="redirect to Contact Me"> </ListRedirect>
+            <Link to='/projects' id="headerItem"> Projects </Link>
+            <Link to='/experience' id="headerItem"> Experience</Link>
             <ListLink name="Links"> </ListLink>
           </div>
           <HeaderContact name="Contact Now" link="redirect to contact me page"> </HeaderContact>
         </div>
         <h1 id="mainTitle"> Passionate. <br/> Enthusiastic. <br/> Creative. </h1>
         <div id="buttonOptions">
-        <MainButton name="About Me" link="/about" identity="aboutMeButton"/>
-        <MainButton name="Contact Me" link="/contact" identity="contactMeButton"/>
-          </div>
+          <Link to='/about' id="aboutMeButton"> About Me</Link>
+          <Link to='/contact' id="contactMeButton"> Contact Me</Link>
+        </div>
       </div>
-    )
-  }
-}
-
-class MainButton extends React.Component {
-  constructor() {
-    super()
-  }
-  render() {
-    return (
-        <Link to={this.props.link} id={this.props.identity}> {this.props.name}</Link>
     )
   }
 }
@@ -67,21 +56,10 @@ class ListDropDown extends React.Component {
   render() {
     return (
       <div>
-        <Link to="/about" id="dropDownLinkedIn">LinkedIn</Link>
-        <Link to="/about" id="dropDownGithub">Github</Link>
-        <Link to="/about" id="dropDownEmail">Email</Link>
+        <a href="https://ca.linkedin.com/in/bradley-whitlock-383a34ab" id="dropDownLinkedIn">LinkedIn</a>
+        <a href="https://github.com/bwhitty6" id="dropDownGithub">Github</a>
+        <a href="http://thisismyemail.com" id="dropDownEmail">Email</a>
       </div>
-    );
-  }
-}
-
-class ListRedirect extends React.Component {
-  constructor() {
-    super();
-  }
-  render() {
-    return (
-      <Link to={this.props.link} id="headerItem"> {this.props.name}</Link>
     );
   }
 }
@@ -115,7 +93,5 @@ class HeaderContact extends React.Component {
     )
   }
 }
-
-
 
 export default HomePage
