@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'MyHeaderFont';
-    src: url('./fonts/bearhugs.ttf') format('woff2')
+    src: url('./fonts/bebas.otf') format('woff2')
     /*url('./fonts/antebras.ttf')  format('truetype')*/
 }
 
@@ -47,12 +47,10 @@ html, body {
 }
 
 #landingMessage {
-    /*margin-top: calc(50% - 50px);*/
     font-size: 50px;
 }
 
 #continueMessage {
-    /*margin-top: calc(50% + 50px);*/
     font-size: 20px;
 }
 
@@ -78,31 +76,39 @@ html, body {
 }
 
 #headerName, #headerContact, #middleOptions {
-    margin: 0;
-    padding: 0;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
     height: 100%;
-    font-size: 35px;
+    font-size: 45px;
 }
 #headerName {
+    margin-left: 20px;
+    margin-top: 20px;
     float: left;
 }
 #headerContact {
+    margin-right: 20px;
+    margin-top: 20px;
     float: right;
 }
 
 #middleOptions {
-    position: absolute;
-    margin-left: 50%;
-    height: 35px;
+    position: fixed;
+    margin-left: calc(50% - 154px);
+    height: 50px;
 }
+
 #headerItem, #dropItem {
+    cursor: pointer;
     text-decoration: none;
     float: left;
     display: block;
-    color: grey;
-    font-size: 20px;
+    color: white;
+    font-size: 30px;
     text-align: left;
     padding: 14px 16px;
+    margin-bottom: 20px;
 }
 
 #mainTitle {
@@ -137,8 +143,8 @@ html, body {
 }
 
 #dropDownLinkedIn, #dropDownGithub, #dropDownEmail {
+    color: whitesmoke;
     display: block;
-    color: grey;
     text-decoration: none;
 }
 #dropDownLinkedIn:hover, #dropDownGithub:hover, #dropDownEmail:hover {

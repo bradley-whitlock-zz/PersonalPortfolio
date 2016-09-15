@@ -69,15 +69,15 @@
 
 	var _homepage2 = _interopRequireDefault(_homepage);
 
-	var _about = __webpack_require__(237);
+	var _about = __webpack_require__(238);
 
 	var _about2 = _interopRequireDefault(_about);
 
-	var _experience = __webpack_require__(238);
+	var _experience = __webpack_require__(239);
 
 	var _experience2 = _interopRequireDefault(_experience);
 
-	var _contact = __webpack_require__(239);
+	var _contact = __webpack_require__(240);
 
 	var _contact2 = _interopRequireDefault(_contact);
 
@@ -27169,6 +27169,10 @@
 
 	var _reactRouter = __webpack_require__(35);
 
+	var _header = __webpack_require__(237);
+
+	var _header2 = _interopRequireDefault(_header);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27192,39 +27196,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { id: 'homepage' },
-	        _react2.default.createElement(
-	          'div',
-	          { id: 'header' },
-	          _react2.default.createElement(
-	            HeaderName,
-	            { name: 'Bradley Whitlock', link: 'redirect to homePage' },
-	            ' '
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { id: 'middleOptions' },
-	            _react2.default.createElement(
-	              _reactRouter.Link,
-	              { to: '/projects', id: 'headerItem' },
-	              ' Projects '
-	            ),
-	            _react2.default.createElement(
-	              _reactRouter.Link,
-	              { to: '/experience', id: 'headerItem' },
-	              ' Experience'
-	            ),
-	            _react2.default.createElement(
-	              ListLink,
-	              { name: 'Links' },
-	              ' '
-	            )
-	          ),
-	          _react2.default.createElement(
-	            HeaderContact,
-	            { name: 'Contact Now', link: 'redirect to contact me page' },
-	            ' '
-	          )
-	        ),
+	        _react2.default.createElement(_header2.default, null),
 	        _react2.default.createElement(
 	          'h1',
 	          { id: 'mainTitle' },
@@ -27253,6 +27225,99 @@
 	  }]);
 
 	  return HomePage;
+	}(_react2.default.Component);
+
+	var _default = HomePage;
+	exports.default = _default;
+	;
+
+	(function () {
+	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+	    return;
+	  }
+
+	  __REACT_HOT_LOADER__.register(HomePage, 'HomePage', '/home/brad/Documents/ReactIntro/app/components/homepage.jsx');
+
+	  __REACT_HOT_LOADER__.register(_default, 'default', '/home/brad/Documents/ReactIntro/app/components/homepage.jsx');
+	})();
+
+	;
+
+/***/ },
+/* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(35);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Header = function (_React$Component) {
+	  _inherits(Header, _React$Component);
+
+	  function Header() {
+	    _classCallCheck(this, Header);
+
+	    return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this));
+	  }
+
+	  _createClass(Header, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { id: 'header' },
+	        _react2.default.createElement(
+	          _reactRouter.Link,
+	          { to: '/', id: 'headerName' },
+	          'Bradley Whitlock'
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'middleOptions' },
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/projects', id: 'headerItem' },
+	            ' Projects '
+	          ),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/experience', id: 'headerItem' },
+	            ' Experience'
+	          ),
+	          _react2.default.createElement(
+	            ListLink,
+	            { name: 'Links' },
+	            ' '
+	          )
+	        ),
+	        _react2.default.createElement(
+	          _reactRouter.Link,
+	          { to: '/contact', id: 'headerContact' },
+	          ' Contact Now '
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Header;
 	}(_react2.default.Component);
 
 	var ListLink = function (_React$Component2) {
@@ -27331,69 +27396,7 @@
 	  return ListDropDown;
 	}(_react2.default.Component);
 
-	var HeaderName = function (_React$Component4) {
-	  _inherits(HeaderName, _React$Component4);
-
-	  function HeaderName() {
-	    _classCallCheck(this, HeaderName);
-
-	    var _this4 = _possibleConstructorReturn(this, (HeaderName.__proto__ || Object.getPrototypeOf(HeaderName)).call(this));
-
-	    _this4.handleClick = _this4.handleClick.bind(_this4);
-	    return _this4;
-	  }
-
-	  _createClass(HeaderName, [{
-	    key: 'handleClick',
-	    value: function handleClick() {
-	      console.log('redirect to home page');
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'p',
-	        { onClick: this.handleClick, id: 'headerName' },
-	        this.props.name
-	      );
-	    }
-	  }]);
-
-	  return HeaderName;
-	}(_react2.default.Component);
-
-	var HeaderContact = function (_React$Component5) {
-	  _inherits(HeaderContact, _React$Component5);
-
-	  function HeaderContact() {
-	    _classCallCheck(this, HeaderContact);
-
-	    var _this5 = _possibleConstructorReturn(this, (HeaderContact.__proto__ || Object.getPrototypeOf(HeaderContact)).call(this));
-
-	    _this5.handleClick = _this5.handleClick.bind(_this5);
-	    return _this5;
-	  }
-
-	  _createClass(HeaderContact, [{
-	    key: 'handleClick',
-	    value: function handleClick() {
-	      console.log('redirect to Contact Page');
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'p',
-	        { onClick: this.handleClick, id: 'headerContact' },
-	        this.props.name
-	      );
-	    }
-	  }]);
-
-	  return HeaderContact;
-	}(_react2.default.Component);
-
-	var _default = HomePage;
+	var _default = Header;
 	exports.default = _default;
 	;
 
@@ -27402,23 +27405,19 @@
 	    return;
 	  }
 
-	  __REACT_HOT_LOADER__.register(HomePage, 'HomePage', '/home/brad/Documents/ReactIntro/app/components/homepage.jsx');
+	  __REACT_HOT_LOADER__.register(Header, 'Header', '/home/brad/Documents/ReactIntro/app/components/header.jsx');
 
-	  __REACT_HOT_LOADER__.register(ListLink, 'ListLink', '/home/brad/Documents/ReactIntro/app/components/homepage.jsx');
+	  __REACT_HOT_LOADER__.register(ListLink, 'ListLink', '/home/brad/Documents/ReactIntro/app/components/header.jsx');
 
-	  __REACT_HOT_LOADER__.register(ListDropDown, 'ListDropDown', '/home/brad/Documents/ReactIntro/app/components/homepage.jsx');
+	  __REACT_HOT_LOADER__.register(ListDropDown, 'ListDropDown', '/home/brad/Documents/ReactIntro/app/components/header.jsx');
 
-	  __REACT_HOT_LOADER__.register(HeaderName, 'HeaderName', '/home/brad/Documents/ReactIntro/app/components/homepage.jsx');
-
-	  __REACT_HOT_LOADER__.register(HeaderContact, 'HeaderContact', '/home/brad/Documents/ReactIntro/app/components/homepage.jsx');
-
-	  __REACT_HOT_LOADER__.register(_default, 'default', '/home/brad/Documents/ReactIntro/app/components/homepage.jsx');
+	  __REACT_HOT_LOADER__.register(_default, 'default', '/home/brad/Documents/ReactIntro/app/components/header.jsx');
 	})();
 
 	;
 
 /***/ },
-/* 237 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27432,6 +27431,10 @@
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _header = __webpack_require__(237);
+
+	var _header2 = _interopRequireDefault(_header);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27452,16 +27455,12 @@
 	  }
 
 	  _createClass(About, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      console.log('YESSSSS');
-	    }
-	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
 	        { id: 'aboutPage' },
+	        _react2.default.createElement(_header2.default, null),
 	        _react2.default.createElement(
 	          'p',
 	          null,
@@ -27491,7 +27490,7 @@
 	;
 
 /***/ },
-/* 238 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27558,7 +27557,7 @@
 	;
 
 /***/ },
-/* 239 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
