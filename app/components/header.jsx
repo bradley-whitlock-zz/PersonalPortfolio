@@ -5,6 +5,9 @@ class Header extends React.Component {
   constructor() {
     super()
   }
+  componentDidMount() {
+    console.log('component header mounted')
+  }
   render() {
     return (
     <div id="header">

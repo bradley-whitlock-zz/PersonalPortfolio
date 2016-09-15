@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router'
-import Header from './header'
 
 class HomePage extends React.Component {
   constructor() {
@@ -9,7 +8,6 @@ class HomePage extends React.Component {
   render() {
     return (
       <div id="homepage">
-        <Header />
         <h1 id="mainTitle"> Passionate. <br/> Enthusiastic. <br/> Creative. </h1>
         <div id="buttonOptions">
           <Link to='/about' id="aboutMeButton"> About Me</Link>
