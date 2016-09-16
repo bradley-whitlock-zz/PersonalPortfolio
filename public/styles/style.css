@@ -284,32 +284,78 @@ html, body {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
     filter: alpha(opacity=50);
     opacity: 0.6;
-    color: #80e5ff;
+    color: #31BEEC;
 }
 
 #experiencePageHeader {
-    margin-top: 30px;
+    margin-top: 50px;
     text-align: center;
-    font-size: 40px;
+    font-size: 60px;
+    color: #31BEEC;
 }
 
 .experienceListWrapper {
+    max-width: 100%;
+    overflow-x: hidden;
     display: inline-block;
     width: 100%;
     margin-bottom: 150px;
     min-height: 400px;
-    opacity: 0.6;
     z-index: 1;
 }
 
-.experienceListHeader {
+/* This is for the items whose text is on the left */
+.experienceListHeaderLeft, .experienceListContentLeft {
+    position: absolute;
+    float:left;
+    width: calc(40% - 50px);
+    left: 0;
     text-align: center;
-    z-index: 2;
     color: black;
+    margin-left: 50px;
+}
+.leftImageExperience {
+    float: right;
+    width: calc(60% - 50px);
+    right:0;
+    margin-right: 50px;
 }
 
-.experienceListContent {
+.experienceListContentLeft {
+    margin-top: 140px;
+}
+
+/* This is for the items whose text is on the right */
+.experienceListHeaderRight, .experienceListContentRight {
+    float: right;
+    width: calc(40% - 50px);
+    margin-right: 50px;
+    right: 0;
     text-align: center;
+    color: black;
+}
+.rightImageExperience {
+    float: left;
+    width: calc(60% - 50px);
+    margin-left: 50px;
+    left: 0;
+}
+
+/* This is for the experience headers */
+.experienceListHeaderLeft, .experienceListHeaderRight {
+    color: #31BEEC;
+    font-size: 50px;
+}
+
+/* This is for the experience content */
+.experienceListContentLeft, .experienceListContentRight {
+    font-size: 30px;
+}
+
+/* This is for the images */
+.rightImageExperience, .leftImageExperience {
+    border-radius: 10px;
+    opacity: 0.7;
 }
 
 /*background: linear-gradient(227deg, #11bb6a, #2760bf);*/

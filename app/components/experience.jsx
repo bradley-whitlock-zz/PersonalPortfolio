@@ -5,7 +5,8 @@ let items  = {
     identity: 'tikoNav',
     header: 'Tiko 3D',
     content : 'Tiko was great',
-    backgroundPhoto: 'url(./styles/images/tikos.jpg',
+    image: './styles/images/tikos.jpg',
+    align: true,
     style : {
       backgroundImage: 'url(./styles/images/tiko.jpg)',
       backgroundPosition: 'center',
@@ -15,7 +16,8 @@ let items  = {
     identity: 'moviesNav',
     header: 'Highland Cinemas',
     content: 'Highland Cinemas was fun',
-    backgroundPhoto: 'url(./styles/images/movies.jpg',
+    image: './styles/images/movies.jpg',
+    align: false,
     style : {
       backgroundImage: 'url(./styles/images/movies.jpg)',
       backgroundPosition: 'center',
@@ -24,8 +26,9 @@ let items  = {
   scrabble : {
     identity: 'scrabbleNav',
     header: 'ScrabbleTron 2020',
-    backgroundPhoto: 'url(./styles/images/scrabble.jpg',
+    image: './styles/images/scrabble.jpg',
     content: 'This was an in class project',
+    align: true,
     style: {
       backgroundImage: 'url(./styles/images/scrabble.jpg',
       backgroundPosition: 'center',
@@ -35,7 +38,8 @@ let items  = {
     idnetity: 'securiTronNav',
     header: 'SecuriTron',
     content: 'This was a hack done at U of T',
-    backgroundPhoto: 'url(./styles/images/leapMotion.jpg',
+    image: './styles/images/leapMotion.jpg',
+    align: false,
     style: {
       backgroundImage: 'url(./styles/images/leapMotion.jpg',
       backgroundPosition: 'center',
@@ -45,7 +49,8 @@ let items  = {
     identity: 'fuelCellNav',
     header: 'Fuel Cell Car',
     content: 'This was an in class project',
-    backgroundPhoto: 'url(./styles/images/fuelCell.jpg',
+    image: './styles/images/fuelCell.jpg',
+    align: true,
     style: {
       backgroundImage: 'url(./styles/images/fuelCell.jpg',
       backgroundPosition: 'center',
@@ -55,7 +60,8 @@ let items  = {
     identity: 'volleyballNav',
     header: 'Durham Attack Team Captain',
     content: 'Volleyball team captain',
-    backgroundPhoto: 'url(./styles/images/volleyball.jpg',
+    image: './styles/images/volleyball.jpg',
+    align: false,
     style: {
       backgroundImage: 'url(./styles/images/volleyball.jpg)',
       backgroundPosition: 'center'
@@ -90,6 +96,9 @@ class Experience extends React.Component {
           <ExperienceDetails data={items.fuelCell}/>
           <ExperienceDetails data={items.volleyball}/>
         </div>
+        <a href='#experiencePageHeader' id="expNameItem" >
+          <h1 id="expNameItemHeader">Back To Top</h1>
+        </a>
       </div>
     )
   }
@@ -117,12 +126,25 @@ class ExperienceDetails extends React.Component {
     super()
   }
   render() {
-    return(
-      <div id={this.props.data.identity} className="experienceListWrapper" style={{backgroundImage : this.props.data.backgroundPhoto}}>
-        <h1 className="experienceListHeader">{this.props.data.header}</h1>
-        <h2 className="experienceListContent">{this.props.data.content}</h2>
-      </div>
-    )
+    let content = null
+    if (this.props.data.align){
+      content = (
+        <div id={this.props.data.identity} className="experienceListWrapper">
+          <h2 className="experienceListHeaderLeft">{this.props.data.header}</h2>
+          <h3 className="experienceListContentLeft">{this.props.data.content}</h3>
+          <img src={this.props.data.image} alt="Photo for workplace" className="leftImageExperience"/>
+        </div>
+      )
+    } else {
+      content = (
+        <div id={this.props.data.identity} className="experienceListWrapper">
+          <img src={this.props.data.image} alt="Photo for workplace" className="rightImageExperience"/>
+          <h2 className="experienceListHeaderRight">{this.props.data.header}</h2>
+          <h3 className="experienceListContentRight">{this.props.data.content}</h3>
+        </div>
+      )
+    }
+    return( content )
   }
 }
 

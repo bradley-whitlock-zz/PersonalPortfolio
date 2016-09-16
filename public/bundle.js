@@ -27539,7 +27539,8 @@
 	    identity: 'tikoNav',
 	    header: 'Tiko 3D',
 	    content: 'Tiko was great',
-	    backgroundPhoto: 'url(./styles/images/tikos.jpg',
+	    image: './styles/images/tikos.jpg',
+	    align: true,
 	    style: {
 	      backgroundImage: 'url(./styles/images/tiko.jpg)',
 	      backgroundPosition: 'center'
@@ -27549,7 +27550,8 @@
 	    identity: 'moviesNav',
 	    header: 'Highland Cinemas',
 	    content: 'Highland Cinemas was fun',
-	    backgroundPhoto: 'url(./styles/images/movies.jpg',
+	    image: './styles/images/movies.jpg',
+	    align: false,
 	    style: {
 	      backgroundImage: 'url(./styles/images/movies.jpg)',
 	      backgroundPosition: 'center'
@@ -27558,8 +27560,9 @@
 	  scrabble: {
 	    identity: 'scrabbleNav',
 	    header: 'ScrabbleTron 2020',
-	    backgroundPhoto: 'url(./styles/images/scrabble.jpg',
+	    image: './styles/images/scrabble.jpg',
 	    content: 'This was an in class project',
+	    align: true,
 	    style: {
 	      backgroundImage: 'url(./styles/images/scrabble.jpg',
 	      backgroundPosition: 'center'
@@ -27569,7 +27572,8 @@
 	    idnetity: 'securiTronNav',
 	    header: 'SecuriTron',
 	    content: 'This was a hack done at U of T',
-	    backgroundPhoto: 'url(./styles/images/leapMotion.jpg',
+	    image: './styles/images/leapMotion.jpg',
+	    align: false,
 	    style: {
 	      backgroundImage: 'url(./styles/images/leapMotion.jpg',
 	      backgroundPosition: 'center'
@@ -27579,7 +27583,8 @@
 	    identity: 'fuelCellNav',
 	    header: 'Fuel Cell Car',
 	    content: 'This was an in class project',
-	    backgroundPhoto: 'url(./styles/images/fuelCell.jpg',
+	    image: './styles/images/fuelCell.jpg',
+	    align: true,
 	    style: {
 	      backgroundImage: 'url(./styles/images/fuelCell.jpg',
 	      backgroundPosition: 'center'
@@ -27589,7 +27594,8 @@
 	    identity: 'volleyballNav',
 	    header: 'Durham Attack Team Captain',
 	    content: 'Volleyball team captain',
-	    backgroundPhoto: 'url(./styles/images/volleyball.jpg',
+	    image: './styles/images/volleyball.jpg',
+	    align: false,
 	    style: {
 	      backgroundImage: 'url(./styles/images/volleyball.jpg)',
 	      backgroundPosition: 'center'
@@ -27644,6 +27650,15 @@
 	          _react2.default.createElement(ExperienceDetails, { data: items.securitron }),
 	          _react2.default.createElement(ExperienceDetails, { data: items.fuelCell }),
 	          _react2.default.createElement(ExperienceDetails, { data: items.volleyball })
+	        ),
+	        _react2.default.createElement(
+	          'a',
+	          { href: '#experiencePageHeader', id: 'expNameItem' },
+	          _react2.default.createElement(
+	            'h1',
+	            { id: 'expNameItemHeader' },
+	            'Back To Top'
+	          )
 	        )
 	      );
 	    }
@@ -27699,20 +27714,41 @@
 	  _createClass(ExperienceDetails, [{
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        { id: this.props.data.identity, className: 'experienceListWrapper', style: { backgroundImage: this.props.data.backgroundPhoto } },
-	        _react2.default.createElement(
-	          'h1',
-	          { className: 'experienceListHeader' },
-	          this.props.data.header
-	        ),
-	        _react2.default.createElement(
-	          'h2',
-	          { className: 'experienceListContent' },
-	          this.props.data.content
-	        )
-	      );
+	      var content = null;
+	      if (this.props.data.align) {
+	        content = _react2.default.createElement(
+	          'div',
+	          { id: this.props.data.identity, className: 'experienceListWrapper' },
+	          _react2.default.createElement(
+	            'h2',
+	            { className: 'experienceListHeaderLeft' },
+	            this.props.data.header
+	          ),
+	          _react2.default.createElement(
+	            'h3',
+	            { className: 'experienceListContentLeft' },
+	            this.props.data.content
+	          ),
+	          _react2.default.createElement('img', { src: this.props.data.image, alt: 'Photo for workplace', className: 'leftImageExperience' })
+	        );
+	      } else {
+	        content = _react2.default.createElement(
+	          'div',
+	          { id: this.props.data.identity, className: 'experienceListWrapper' },
+	          _react2.default.createElement('img', { src: this.props.data.image, alt: 'Photo for workplace', className: 'rightImageExperience' }),
+	          _react2.default.createElement(
+	            'h2',
+	            { className: 'experienceListHeaderRight' },
+	            this.props.data.header
+	          ),
+	          _react2.default.createElement(
+	            'h3',
+	            { className: 'experienceListContentRight' },
+	            this.props.data.content
+	          )
+	        );
+	      }
+	      return content;
 	    }
 	  }]);
 
