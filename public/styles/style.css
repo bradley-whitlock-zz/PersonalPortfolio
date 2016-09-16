@@ -316,6 +316,7 @@ html, body {
 /*background-size: 400% 400%;*/
 /*-webkit-animation: AboutGradient 10s ease infinite;*/
 /*animation: AboutGradient 100s ease infinite;*/
+
 @-webkit-keyframes AboutGradient {
     0%{background-position:0% 97%}
     50%{background-position:100% 4%}
