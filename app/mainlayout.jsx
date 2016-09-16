@@ -10,7 +10,7 @@ class MainLayout extends React.Component {
       <div id="mainLayout">
         <Header/>
         {this.props.children}
-        <footer className="mainFooter">
+        <footer id="footer">
           <p> This is the footer</p>
         </footer>
       </div>

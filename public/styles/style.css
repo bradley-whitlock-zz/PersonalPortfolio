@@ -68,10 +68,15 @@ html, body {
 }
 
 #header {
+    z-index: 3;
+    position:fixed;
+    margin: 0;
+    padding:0;
+    top:0;
     color: white;
     background-color: black;
     font-family: 'MyHeaderFont', Fallback, sans-serif;
-    height: 70px;
+    height: 80px;
     width: 100%;
     float: none;
     vertical-align: middle;
@@ -223,10 +228,6 @@ html, body {
     position: fixed;
     height: 100%;
     width: 100%;
-    /*background: linear-gradient(227deg, #11bb6a, #2760bf);*/
-    /*background-size: 400% 400%;*/
-    /*-webkit-animation: AboutGradient 10s ease infinite;*/
-    /*animation: AboutGradient 100s ease infinite;*/
 }
 
 #aboutTitle {
@@ -240,7 +241,81 @@ html, body {
     height: calc(100% - 135px);
 }
 
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    height: 20px;
+}
 
+#experiencePage {
+    margin-top: 80px;
+}
+#expNames {
+    float:left;
+    width: calc(100% - 100px);
+    margin-left: 50px;
+    min-height: 100%;
+    margin-bottom: 100px;
+}
+
+#expNameItem {
+    text-decoration: none;
+    color: black;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    opacity: .4;
+    height: 70px;
+    border-radius: 8px;
+    padding-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 55px;
+    text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    -webkit-transition: opacity 2s, color 1s;
+    transition: opacity 2s, color 1s;
+}
+
+#expNameItem:hover {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    opacity: 0.6;
+    color: #80e5ff;
+}
+
+#experiencePageHeader {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.experienceListWrapper {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 150px;
+    min-height: 400px;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.experienceListHeader {
+    text-align: center;
+    z-index: 2;
+    color: black;
+}
+
+.experienceListContent {
+    text-align: center;
+}
+
+/*background: linear-gradient(227deg, #11bb6a, #2760bf);*/
+/*background-size: 400% 400%;*/
+/*-webkit-animation: AboutGradient 10s ease infinite;*/
+/*animation: AboutGradient 100s ease infinite;*/
 @-webkit-keyframes AboutGradient {
     0%{background-position:0% 97%}
     50%{background-position:100% 4%}

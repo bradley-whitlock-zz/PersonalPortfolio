@@ -5,15 +5,12 @@ class Header extends React.Component {
   constructor() {
     super()
   }
-  componentDidMount() {
-    console.log('component header mounted')
-  }
   render() {
     return (
     <div id="header">
       <Link to="/" id="headerName">Bradley Whitlock</Link>
       <div id="middleOptions">
-        <Link to='/projects' id="headerItem"> Projects </Link>
+        <Link to='/about' id="headerItem"> About </Link>
         <Link to='/experience' id="headerItem"> Experience</Link>
         <ListLink name="Links"> </ListLink>
       </div>

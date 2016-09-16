@@ -119,7 +119,6 @@ class App extends React.Component {
     this.setState({m: 2})
   }
   componentDidMount() {
-    console.log('hello world')
     console.log(ReactDOM.findDOMNode(this))
     this.inc = setInterval(this.update, 500)
   }

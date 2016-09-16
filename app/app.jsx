@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom'
 import HomePage from './components/homepage'
 import About from './components/about'
 import Experience from './components/experience'
+// import { ExperienceItems} from './components/experience'
 import Contact from './components/contact'
 import MainLayout from './mainlayout'
 
@@ -13,9 +14,9 @@ class Routes extends Component {
     return (
       <Router history={browserHistory}>
         <Route path='/' component={MainLayout}>
-          <IndexRoute component={HomePage}/>
+          <IndexRoute component={HomePage} />
           <Route path='/about' component={About} />
-          <Route path='/experience' component={Experience} />
+          <Route path='/experience' component={Experience}/>
           <Route path='/contact' component={Contact} />
         </Route>
       </Router>

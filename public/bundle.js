@@ -92,6 +92,8 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// import { ExperienceItems} from './components/experience'
+
 
 	var Routes = function (_Component) {
 	  _inherits(Routes, _Component);
@@ -27371,11 +27373,6 @@
 	  }
 
 	  _createClass(Header, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      console.log('component header mounted');
-	    }
-	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -27391,8 +27388,8 @@
 	          { id: 'middleOptions' },
 	          _react2.default.createElement(
 	            _reactRouter.Link,
-	            { to: '/projects', id: 'headerItem' },
-	            ' Projects '
+	            { to: '/about', id: 'headerItem' },
+	            ' About '
 	          ),
 	          _react2.default.createElement(
 	            _reactRouter.Link,
@@ -27517,7 +27514,7 @@
 /* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -27537,31 +27534,189 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	var items = {
+	  tiko: {
+	    identity: 'tikoNav',
+	    header: 'Tiko 3D',
+	    content: 'Tiko was great',
+	    backgroundPhoto: 'url(./styles/images/tikos.jpg',
+	    style: {
+	      backgroundImage: 'url(./styles/images/tiko.jpg)',
+	      backgroundPosition: 'center'
+	    }
+	  },
+	  movies: {
+	    identity: 'moviesNav',
+	    header: 'Highland Cinemas',
+	    content: 'Highland Cinemas was fun',
+	    backgroundPhoto: 'url(./styles/images/movies.jpg',
+	    style: {
+	      backgroundImage: 'url(./styles/images/movies.jpg)',
+	      backgroundPosition: 'center'
+	    }
+	  },
+	  scrabble: {
+	    identity: 'scrabbleNav',
+	    header: 'ScrabbleTron 2020',
+	    backgroundPhoto: 'url(./styles/images/scrabble.jpg',
+	    content: 'This was an in class project',
+	    style: {
+	      backgroundImage: 'url(./styles/images/scrabble.jpg',
+	      backgroundPosition: 'center'
+	    }
+	  },
+	  securitron: {
+	    idnetity: 'securiTronNav',
+	    header: 'SecuriTron',
+	    content: 'This was a hack done at U of T',
+	    backgroundPhoto: 'url(./styles/images/leapMotion.jpg',
+	    style: {
+	      backgroundImage: 'url(./styles/images/leapMotion.jpg',
+	      backgroundPosition: 'center'
+	    }
+	  },
+	  fuelCell: {
+	    identity: 'fuelCellNav',
+	    header: 'Fuel Cell Car',
+	    content: 'This was an in class project',
+	    backgroundPhoto: 'url(./styles/images/fuelCell.jpg',
+	    style: {
+	      backgroundImage: 'url(./styles/images/fuelCell.jpg',
+	      backgroundPosition: 'center'
+	    }
+	  },
+	  volleyball: {
+	    identity: 'volleyballNav',
+	    header: 'Durham Attack Team Captain',
+	    content: 'Volleyball team captain',
+	    backgroundPhoto: 'url(./styles/images/volleyball.jpg',
+	    style: {
+	      backgroundImage: 'url(./styles/images/volleyball.jpg)',
+	      backgroundPosition: 'center'
+	    }
+	  }
+	};
+
 	var Experience = function (_React$Component) {
 	  _inherits(Experience, _React$Component);
 
 	  function Experience() {
 	    _classCallCheck(this, Experience);
 
-	    return _possibleConstructorReturn(this, (Experience.__proto__ || Object.getPrototypeOf(Experience)).call(this));
+	    var _this = _possibleConstructorReturn(this, (Experience.__proto__ || Object.getPrototypeOf(Experience)).call(this));
+
+	    _this.updateDetails = _this.updateDetails.bind(_this);
+	    return _this;
 	  }
 
 	  _createClass(Experience, [{
-	    key: "render",
+	    key: 'updateDetails',
+	    value: function updateDetails() {
+	      console.log('should be updating the text');
+	    }
+	  }, {
+	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        "div",
-	        { id: "experiencePage" },
+	        'div',
+	        { id: 'experiencePage' },
 	        _react2.default.createElement(
-	          "p",
-	          null,
-	          "This is my experience page"
+	          'h1',
+	          { id: 'experiencePageHeader' },
+	          ' Personal Experience '
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'expNames' },
+	          _react2.default.createElement(ExperienceItems, { changeDetails: this.updateDetails, data: items.tiko }),
+	          _react2.default.createElement(ExperienceItems, { changeDetails: this.updateDetails, data: items.movies }),
+	          _react2.default.createElement(ExperienceItems, { changeDetails: this.updateDetails, data: items.scrabble }),
+	          _react2.default.createElement(ExperienceItems, { changeDetails: this.updateDetails, data: items.securitron }),
+	          _react2.default.createElement(ExperienceItems, { changeDetails: this.updateDetails, data: items.fuelCell }),
+	          _react2.default.createElement(ExperienceItems, { changeDetails: this.updateDetails, data: items.volleyball })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'expDetails' },
+	          _react2.default.createElement(ExperienceDetails, { data: items.tiko }),
+	          _react2.default.createElement(ExperienceDetails, { data: items.movies }),
+	          _react2.default.createElement(ExperienceDetails, { data: items.scrabble }),
+	          _react2.default.createElement(ExperienceDetails, { data: items.securitron }),
+	          _react2.default.createElement(ExperienceDetails, { data: items.fuelCell }),
+	          _react2.default.createElement(ExperienceDetails, { data: items.volleyball })
 	        )
 	      );
 	    }
 	  }]);
 
 	  return Experience;
+	}(_react2.default.Component);
+
+	var ExperienceItems = function (_React$Component2) {
+	  _inherits(ExperienceItems, _React$Component2);
+
+	  function ExperienceItems() {
+	    _classCallCheck(this, ExperienceItems);
+
+	    var _this2 = _possibleConstructorReturn(this, (ExperienceItems.__proto__ || Object.getPrototypeOf(ExperienceItems)).call(this));
+
+	    _this2.update = _this2.update.bind(_this2);
+	    return _this2;
+	  }
+
+	  _createClass(ExperienceItems, [{
+	    key: 'update',
+	    value: function update() {
+	      console.log('we are updating');
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'a',
+	        { href: '#' + this.props.data.identity, id: 'expNameItem', style: this.props.data.style, onClick: this.update },
+	        _react2.default.createElement(
+	          'h1',
+	          { id: 'expNameItemHeader' },
+	          this.props.data.header
+	        )
+	      );
+	    }
+	  }]);
+
+	  return ExperienceItems;
+	}(_react2.default.Component);
+
+	var ExperienceDetails = function (_React$Component3) {
+	  _inherits(ExperienceDetails, _React$Component3);
+
+	  function ExperienceDetails() {
+	    _classCallCheck(this, ExperienceDetails);
+
+	    return _possibleConstructorReturn(this, (ExperienceDetails.__proto__ || Object.getPrototypeOf(ExperienceDetails)).call(this));
+	  }
+
+	  _createClass(ExperienceDetails, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { id: this.props.data.identity, className: 'experienceListWrapper', style: { backgroundImage: this.props.data.backgroundPhoto } },
+	        _react2.default.createElement(
+	          'h1',
+	          { className: 'experienceListHeader' },
+	          this.props.data.header
+	        ),
+	        _react2.default.createElement(
+	          'h2',
+	          { className: 'experienceListContent' },
+	          this.props.data.content
+	        )
+	      );
+	    }
+	  }]);
+
+	  return ExperienceDetails;
 	}(_react2.default.Component);
 
 	var _default = Experience;
@@ -27573,9 +27728,15 @@
 	    return;
 	  }
 
-	  __REACT_HOT_LOADER__.register(Experience, "Experience", "/home/brad/Documents/ReactIntro/app/components/experience.jsx");
+	  __REACT_HOT_LOADER__.register(items, 'items', '/home/brad/Documents/ReactIntro/app/components/experience.jsx');
 
-	  __REACT_HOT_LOADER__.register(_default, "default", "/home/brad/Documents/ReactIntro/app/components/experience.jsx");
+	  __REACT_HOT_LOADER__.register(Experience, 'Experience', '/home/brad/Documents/ReactIntro/app/components/experience.jsx');
+
+	  __REACT_HOT_LOADER__.register(ExperienceItems, 'ExperienceItems', '/home/brad/Documents/ReactIntro/app/components/experience.jsx');
+
+	  __REACT_HOT_LOADER__.register(ExperienceDetails, 'ExperienceDetails', '/home/brad/Documents/ReactIntro/app/components/experience.jsx');
+
+	  __REACT_HOT_LOADER__.register(_default, 'default', '/home/brad/Documents/ReactIntro/app/components/experience.jsx');
 	})();
 
 	;
@@ -27694,7 +27855,7 @@
 	        this.props.children,
 	        _react2.default.createElement(
 	          'footer',
-	          { className: 'mainFooter' },
+	          { id: 'footer' },
 	          _react2.default.createElement(
 	            'p',
 	            null,
