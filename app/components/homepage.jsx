@@ -11,7 +11,7 @@ class HomePage extends React.Component {
         <h1 id="mainTitle"> Passionate. <br/> Enthusiastic. <br/> Creative. </h1>
         <div id="buttonOptions">
           <Link to='/about' id="aboutMeButton"> About Me</Link>
-          <Link to='/contact' id="contactMeButton"> Contact Me</Link>
+          <Link to='/experience' id="experienceButton"> Experience </Link>
         </div>
       </div>
     )

@@ -98,6 +98,9 @@ html, body {
     color:lightgray;
 }
 #headerContact {
+    font-family: 'MyHeaderFont', Fallback, sans-serif;
+    background: none;
+    border: none;
     margin-right: 20px;
     margin-top: 20px;
     float: right;
@@ -132,7 +135,7 @@ html, body {
     margin-left: 10%;
 }
 
-#aboutMeButton, #contactMeButton {
+#aboutMeButton, #experienceButton {
     color: white;
     text-decoration: none;
     cursor: pointer;
@@ -142,11 +145,9 @@ html, body {
     border-color: ghostwhite;
 }
 
-#contactMeButton {
+#experienceButton {
     margin-left: 50px;
 }
-
-/* This is used for the gradient background of the bot section */
 
 #headerItem:hover {
     color: lightgray;
@@ -170,77 +171,6 @@ html, body {
     color: lightgray;
 }
 
-
-@-webkit-keyframes AnimationName {
-    0%{background-position:97% 0%}
-    50%{background-position:4% 100%}
-    100%{background-position:97% 0%}
-}
-@keyframes AnimationName {
-    0%{background-position:97% 0%}
-    50%{background-position:4% 100%}
-    100%{background-position:97% 0%}
-}
-
-#botBox {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    background-color: #0066ff;
-    width: 350px;
-    box-shadow: 0px 0px 70px;
-    border-radius: 25px;
-}
-
-#botHeader {
-    height: 50px;
-    width: 100%;
-    margin:auto;
-    text-align: center;
-    padding:5px;
-    font-family: 'MyHeaderFont', Fallback, sans-serif;
-    font-size: 30px;
-    color: white;
-}
-
-#botContent {
-    margin-left: 20px;
-    margin-right: 20px;
-    height: 200px;
-    margin-bottom: 50px;
-    background-color: white;
-}
-
-#botConversation {
-    overflow-y : scroll;
-    background: white;
-}
-
-#inputBox {
-    position: fixed;
-    bottom: 0;
-    margin-bottom: 20px;
-    margin-right: 20px;
-}
-
-#aboutPage {
-    background-image: -webkit-linear-gradient(black, white);
-    position: fixed;
-    height: 100%;
-    width: 100%;
-}
-
-#aboutTitle {
-    background-image: url('./images/brad.jpg');
-    background-size: 100% 100%;
-    display: block;
-    color: white;
-    text-align: center;
-    font-size: 150px;
-    margin: 80px 20px 0 20px;
-    height: calc(100% - 135px);
-}
-
 #footer {
     position: fixed;
     bottom: 0;
@@ -249,8 +179,55 @@ html, body {
     height: 20px;
 }
 
+
+@media screen and (max-width: 900px){
+    #middleOptions {
+        display: none;
+    }
+    #headerContact {
+        display: none;
+    }
+    #dropDownAll {
+        position: absolute;
+        /*display: inline-block;*/
+        margin-right: 30px;
+        margin-top: 5px;
+        right: 0;
+        text-decoration: none;
+        cursor: pointer;
+        display: block;
+        color: white;
+        font-size: 30px;
+        text-align: left;
+        padding: 14px 16px;
+        /*margin-bottom: 20px;*/
+    }
+    #bar1, #bar2, #bar3 {
+        width: 45px;
+        height: 8px;
+        background-color: white;
+        margin: 10px 0;
+        transition: 0.4s;
+        border-radius: 2px;
+    }
+    #aboutRedirect, #expRedirect {
+        background-color: darkgray;
+        padding: 10px 10px 10px 10px;
+        color: whitesmoke;
+        display: block;
+        text-decoration: none;
+    }
+    #aboutRedirect:hover, #expRedirect:hover {
+        color: lightgray;
+    }
+}
+
 #experiencePage {
     margin-top: 80px;
+    background-image: -webkit-linear-gradient(black, white);
+    height: 100%;
+    max-height: 500px;
+    width: 100%;
 }
 #expNames {
     float:left;
@@ -358,18 +335,192 @@ html, body {
     opacity: 0.7;
 }
 
-/*background: linear-gradient(227deg, #11bb6a, #2760bf);*/
-/*background-size: 400% 400%;*/
-/*-webkit-animation: AboutGradient 10s ease infinite;*/
-/*animation: AboutGradient 100s ease infinite;*/
+/* This is for the contact modal */
 
-@-webkit-keyframes AboutGradient {
-    0%{background-position:0% 97%}
-    50%{background-position:100% 4%}
-    100%{background-position:0% 97%}
+#contactModalHeader {
+    position: absolute;
+    left: calc(50% - 101px);
+    font-size: 35px;
+    color: #31BEEC;
 }
-@keyframes AboutGradient {
-    0%{background-position:0% 97%}
-    50%{background-position:100% 4%}
-    100%{background-position:0% 97%}
+#closeContactModal {
+    cursor:pointer;
+    float: right;
+    border: none;
+    background-color: white;
+    text-decoration: none;
+    font-size: 25px;
+    text-align: center;
+    display: inline-block;
+    color: black;
 }
+#closeContactModal:hover {
+    color: lightgray;
+}
+
+.contactForm {
+    margin-top: 80px;
+    display: inline-block;
+    text-align: center;
+}
+
+.inputHeader {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.inputField, #contactMessage {
+    display: inline-block;
+    text-align: center;
+    width: calc(100% - 100px);
+    margin: 0 50px 25px 50px;
+    text-decoration: none;
+    border: none;
+    border-bottom: solid;
+    border-bottom-color: red;
+    outline: none;
+    font-size: 20px;
+}
+.inputField:focus:required:invalid, #contactMessage:focus:required:invalid {
+    border-bottom-color: red;
+}
+.inputField:required:valid, #contactMessage:required:valid  {
+    border-bottom-color: lightgreen;
+}
+#contactMessage {
+    min-height: 50px;
+}
+
+#submitMessage {
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: center;
+    display: inline-block;
+    color: #31BEEC;
+}
+
+#messageStatus {
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+    display: inline-block;
+    color: darkblue;
+    margin-bottom: 15px;
+}
+
+/* THIS IS FOR THE ABOUT PAGE */
+
+#aboutPage {
+    margin-top: 80px;
+    background-image: -webkit-linear-gradient(black, white);
+    height: 100%;
+    max-height: 500px;
+    width: 100%;
+}
+
+#aboutTitle {
+    font-size: 50px;
+    height: 100px;
+    text-align: center;
+    color: #31BEEC;
+}
+
+#pic1 {
+    transform: rotate(90deg);
+    margin-bottom: 50px;
+    float: left;
+    width: 25%;
+}
+#pic2 {
+    float: right;
+    width:30%;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+#pic3 {
+    width: 40%;
+    margin-left: 30%;
+}
+
+.bradPics {
+    border-radius: 5px;
+}
+
+#ropRow, #bottomRow, #aboutContent {
+    margin-left: 50px;
+    margin-right: 50px;
+    width: calc(100% - 100px);
+}
+
+#aboutContent {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 25px;
+    min-height: 400px;
+}
+
+
+
+/*
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:97% 0%}
+    50%{background-position:4% 100%}
+    100%{background-position:97% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:97% 0%}
+    50%{background-position:4% 100%}
+    100%{background-position:97% 0%}
+}
+
+#botBox {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: #0066ff;
+    width: 350px;
+    box-shadow: 0px 0px 70px;
+    border-radius: 25px;
+}
+
+#botHeader {
+    height: 50px;
+    width: 100%;
+    margin:auto;
+    text-align: center;
+    padding:5px;
+    font-family: 'MyHeaderFont', Fallback, sans-serif;
+    font-size: 30px;
+    color: white;
+}
+
+#botContent {
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 200px;
+    margin-bottom: 50px;
+    background-color: white;
+}
+
+#botConversation {
+    overflow-y : scroll;
+    background: white;
+}
+
+#inputBox {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+*/

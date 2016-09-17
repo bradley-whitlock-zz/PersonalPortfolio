@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
+import Modal from 'react-modal'
 
 class Header extends React.Component {
   constructor() {
@@ -14,8 +15,115 @@ class Header extends React.Component {
         <Link to='/experience' id="headerItem"> Experience</Link>
         <ListLink name="Links"> </ListLink>
       </div>
-      <Link to="/contact" id="headerContact"> Contact Now </Link>
+      <ContactModal id="headerContact"> Contact Now </ContactModal>
+      <DropDownMain />
     </div>
+    )
+  }
+}
+
+class DropDownMain extends React.Component {
+  constructor() {
+    super()
+    this.state = { hovered: null }
+    this.showOptions = this.showOptions.bind(this)
+    this.clearOptions = this.clearOptions.bind(this)
+  }
+  showOptions() {
+    this.setState ({ hovered : <DropDownOptions/> })
+  }
+  clearOptions() {
+    this.setState ({ hovered : null })
+  }
+  render() {
+    return (
+      <div id="dropDownAll" onMouseOver={this.showOptions} onMouseLeave={this.clearOptions}>
+        <div id="bar1"></div>
+        <div id="bar2"></div>
+        <div id="bar3"></div>
+        {this.state.hovered}
+      </div>
+    );
+  }
+}
+class DropDownOptions extends React.Component {
+  constructor(){
+    super()
+  }
+  render(){
+    return(
+      <div id="dropDownAll">
+        <Link to="/about" id="aboutRedirect"> About </Link>
+        <Link to="/experience" id="expRedirect"> Experience </Link>
+        <ContactModal id="dropDownContact"> Contact Now</ContactModal>
+      </div>
+    )
+  }
+}
+
+const modalStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    width                 : '60%',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+}
+
+class ContactModal extends  React.Component {
+  constructor() {
+    super()
+    this.openModal = this.openModal.bind(this)
+    this.afterOpenModal = this.afterOpenModal.bind(this)
+    this.closeModal = this.closeModal.bind(this)
+    this.sendMessage = this.sendMessage.bind(this)
+    this.state = {modalIsOpen: false, messageStatus: ''}
+  }
+  openModal(){
+    console.log('going to open modal')
+    this.setState({modalIsOpen: true})
+  }
+  afterOpenModal(){
+    console.log('after nodal open')
+    // this.refs.subtitle.style.color = '#f00'
+  }
+  closeModal() {
+    console.log('trying to close the modal')
+    this.setState({modalIsOpen: false})
+  }
+  sendMessage() {
+    console.log('lets send a message')
+    this.setState({messageStatus: 'Sent'})
+  }
+  render(){
+    return (
+      <div className="contactModal">
+        <button id="headerContact" onClick={this.openModal}>Contact Now</button>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          style={modalStyles}>
+
+          <button onClick={this.closeModal} id="closeContactModal"> Close </button>
+          <h2 id="contactModalHeader"> Contact Brad </h2>
+          <form className="contactForm">
+            <label className="inputHeader">  Enter Your Name Here </label>
+            <input className="inputField" placeholder='Tim Brown' type="text" required />
+
+            <label className="inputHeader"> Enter Your Email Here </label>
+            <input className="inputField" placeholder="tim.brown@youremail.com" type="text" required/>
+
+            <label className="inputHeader"> Enter Your Message Here </label>
+            <input className="inputField" id="contactMessage" placeholder="What would you like to ask?" type="text" required />
+          </form>
+          <div id="messageStatus">{this.state.messageStatus}</div>
+          <button onClick={this.sendMessage} id="submitMessage"> Send </button>
+        </Modal>
+      </div>
     )
   }
 }
