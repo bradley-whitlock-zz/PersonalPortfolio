@@ -1,8 +1,8 @@
 'use strict'
-const express = require('express')
-const bodyParser = require('body-parser')
+var express = require('express')
+var bodyParser = require('body-parser')
 
-const app = express()
+var app = express()
 
 app.enable('trust proxy')
 
