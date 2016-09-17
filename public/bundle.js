@@ -27534,7 +27534,6 @@
 	    var _this4 = _possibleConstructorReturn(this, (ContactModal.__proto__ || Object.getPrototypeOf(ContactModal)).call(this));
 
 	    _this4.openModal = _this4.openModal.bind(_this4);
-	    _this4.afterOpenModal = _this4.afterOpenModal.bind(_this4);
 	    _this4.closeModal = _this4.closeModal.bind(_this4);
 	    _this4.sendMessage = _this4.sendMessage.bind(_this4);
 	    _this4.handleChangeName = _this4.handleChangeName.bind(_this4);
@@ -27547,28 +27546,31 @@
 	  _createClass(ContactModal, [{
 	    key: 'openModal',
 	    value: function openModal() {
-	      console.log('going to open modal');
 	      this.setState({ modalIsOpen: true });
-	    }
-	  }, {
-	    key: 'afterOpenModal',
-	    value: function afterOpenModal() {
-	      console.log('after nodal open');
-	      // this.refs.subtitle.style.color = '#f00'
 	    }
 	  }, {
 	    key: 'closeModal',
 	    value: function closeModal() {
-	      console.log('trying to close the modal');
 	      this.setState({ modalIsOpen: false });
 	    }
 	  }, {
 	    key: 'sendMessage',
 	    value: function sendMessage() {
-	      _superagent2.default.post('/mail').send({ name: this.state.name, email: this.state.email, message: this.state.message }).end(function (err, res) {
-	        console.log(res);
-	      });
-	      this.setState({ messageStatus: 'Sent' });
+	      var _this5 = this;
+
+	      if (this.state.name && this.state.email && this.state.message && this.state.email.indexOf('@') > 0) {
+	        _superagent2.default.post('/mail').send({ name: this.state.name, email: this.state.email, message: this.state.message }).end(function (err, res) {
+	          if (err) {
+	            console.log('Error: ', err);
+	            _this5.setState({ messageStatus: 'Could not send, sorry' });
+	          } else {
+	            console.log('got a response of ', res);
+	            _this5.setState({ messageStatus: 'Sent successfully' });
+	          }
+	        });
+	      } else {
+	        this.setState({ messageStatus: 'Please enter all credentials correctly' });
+	      }
 	    }
 	  }, {
 	    key: 'handleChangeName',
@@ -27659,12 +27661,12 @@
 	  function ListLink() {
 	    _classCallCheck(this, ListLink);
 
-	    var _this5 = _possibleConstructorReturn(this, (ListLink.__proto__ || Object.getPrototypeOf(ListLink)).call(this));
+	    var _this6 = _possibleConstructorReturn(this, (ListLink.__proto__ || Object.getPrototypeOf(ListLink)).call(this));
 
-	    _this5.state = { hovered: null };
-	    _this5.showOptions = _this5.showOptions.bind(_this5);
-	    _this5.clearOptions = _this5.clearOptions.bind(_this5);
-	    return _this5;
+	    _this6.state = { hovered: null };
+	    _this6.showOptions = _this6.showOptions.bind(_this6);
+	    _this6.clearOptions = _this6.clearOptions.bind(_this6);
+	    return _this6;
 	  }
 
 	  _createClass(ListLink, [{

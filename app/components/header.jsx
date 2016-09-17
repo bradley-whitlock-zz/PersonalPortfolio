@@ -78,7 +78,6 @@ class ContactModal extends  React.Component {
   constructor() {
     super()
     this.openModal = this.openModal.bind(this)
-    this.afterOpenModal = this.afterOpenModal.bind(this)
     this.closeModal = this.closeModal.bind(this)
     this.sendMessage = this.sendMessage.bind(this)
     this.handleChangeName = this.handleChangeName.bind(this)
@@ -87,25 +86,28 @@ class ContactModal extends  React.Component {
     this.state = {modalIsOpen: false, name: '', email: '', message: ''}
   }
   openModal(){
-    console.log('going to open modal')
     this.setState({modalIsOpen: true})
   }
-  afterOpenModal(){
-    console.log('after nodal open')
-    // this.refs.subtitle.style.color = '#f00'
-  }
   closeModal() {
-    console.log('trying to close the modal')
     this.setState({modalIsOpen: false})
   }
   sendMessage() {
-    request
-    .post('/mail')
-    .send({ name: this.state.name, email: this.state.email, message: this.state.message })
-    .end((err, res) => {
-      console.log(res)
-    })
-    this.setState({messageStatus: 'Sent'})
+    if (this.state.name && this.state.email && this.state.message && this.state.email.indexOf('@') > 0) {
+      request
+      .post('/mail')
+      .send({ name: this.state.name, email: this.state.email, message: this.state.message })
+      .end((err, res) => {
+        if (err) {
+          console.log('Error: ', err)
+          this.setState({ messageStatus: 'Could not send, sorry' })
+        } else {
+          console.log('got a response of ', res)
+          this.setState({ messageStatus: 'Sent successfully' })
+        }
+      })
+    } else {
+      this.setState({ messageStatus: 'Please enter all credentials correctly' })
+    }
   }
   handleChangeName(event) {
     this.setState({name: event.target.value});
