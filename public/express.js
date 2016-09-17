@@ -5,23 +5,23 @@ var bodyParser = require('body-parser')
 var app = express()
 
 app.enable('trust proxy')
-
-app.set('port', 3001)
+console.log(process.env)
+app.set('port', process.env.PORT || 3001)
 // app.use(bodyParser.urlencoded)
 app.use(bodyParser.json())
 app.use(express.static('public'));
 
-app.get('/*', (req, res) => {
+app.get('/*', function (req, res) {
   res.sendFile(__dirname + '/index.html')
 })
 
-app.post('/mail', (req, res) => {
+app.post('/mail', function(req, res) {
   console.log(req.body)
   res.send({
     status: 'okay'
   })
 })
 
-app.listen(app.get('port'), () => {
-  console.log(`listening on port ${app.get('port')}`)
+app.listen(app.get('port'), function () {
+  console.log("listening on port" + app.get('port'))
 })
