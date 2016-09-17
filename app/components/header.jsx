@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 import Modal from 'react-modal'
+import request from 'superagent'
 
 class Header extends React.Component {
   constructor() {
@@ -80,7 +81,10 @@ class ContactModal extends  React.Component {
     this.afterOpenModal = this.afterOpenModal.bind(this)
     this.closeModal = this.closeModal.bind(this)
     this.sendMessage = this.sendMessage.bind(this)
-    this.state = {modalIsOpen: false, messageStatus: ''}
+    this.handleChangeName = this.handleChangeName.bind(this)
+    this.handleChangeEmail = this.handleChangeEmail.bind(this)
+    this.handleChangeMessage = this.handleChangeMessage.bind(this)
+    this.state = {modalIsOpen: false, name: '', email: '', message: ''}
   }
   openModal(){
     console.log('going to open modal')
@@ -95,8 +99,22 @@ class ContactModal extends  React.Component {
     this.setState({modalIsOpen: false})
   }
   sendMessage() {
-    console.log('lets send a message')
+    request
+    .post('/mail')
+    .send({ name: this.state.name, email: this.state.email, message: this.state.message })
+    .end((err, res) => {
+      console.log(res)
+    })
     this.setState({messageStatus: 'Sent'})
+  }
+  handleChangeName(event) {
+    this.setState({name: event.target.value});
+  }
+  handleChangeEmail(event) {
+    this.setState({email: event.target.value});
+  }
+  handleChangeMessage(event) {
+    this.setState({message: event.target.value});
   }
   render(){
     return (
@@ -109,16 +127,16 @@ class ContactModal extends  React.Component {
           style={modalStyles}>
 
           <button onClick={this.closeModal} id="closeContactModal"> Close </button>
-          <h2 id="contactModalHeader"> Contact Brad </h2>
+          <h2 id="contactModalHeader"> PLEASE CONTACT BRAD ABOUT ANYTHING </h2>
           <form className="contactForm">
             <label className="inputHeader">  Enter Your Name Here </label>
-            <input className="inputField" placeholder='Tim Brown' type="text" required />
+            <input className="inputField" placeholder='Tim Brown' type="text" value={this.state.name} onChange={this.handleChangeName} required />
 
             <label className="inputHeader"> Enter Your Email Here </label>
-            <input className="inputField" placeholder="tim.brown@youremail.com" type="text" required/>
+            <input className="inputField" placeholder="tim.brown@youremail.com" value={this.state.email} onChange={this.handleChangeEmail} type="text" required/>
 
             <label className="inputHeader"> Enter Your Message Here </label>
-            <input className="inputField" id="contactMessage" placeholder="What would you like to ask?" type="text" required />
+            <input className="inputField" id="contactMessage" placeholder="What would you like to ask?" value={this.state.message} onChange={this.handleChangeMessage} type="text" required />
           </form>
           <div id="messageStatus">{this.state.messageStatus}</div>
           <button onClick={this.sendMessage} id="submitMessage"> Send </button>
