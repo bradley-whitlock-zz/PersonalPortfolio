@@ -27721,7 +27721,7 @@
 	        ),
 	        _react2.default.createElement(
 	          'a',
-	          { href: 'http://thisismyemail.com', id: 'dropDownEmail' },
+	          { href: 'mailto:bradwhitlock6@gmail.com', id: 'dropDownEmail' },
 	          'Email'
 	        )
 	      );
@@ -31571,16 +31571,7 @@
 	        'div',
 	        { id: 'mainLayout' },
 	        _react2.default.createElement(_header2.default, null),
-	        this.props.children,
-	        _react2.default.createElement(
-	          'footer',
-	          { id: 'footer' },
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            ' This is the footer'
-	          )
-	        )
+	        this.props.children
 	      );
 	    }
 	  }]);

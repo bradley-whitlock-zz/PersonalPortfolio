@@ -179,7 +179,7 @@ class ListDropDown extends React.Component {
       <div>
         <a href="https://ca.linkedin.com/in/bradley-whitlock-383a34ab" id="dropDownLinkedIn">LinkedIn</a>
         <a href="https://github.com/bwhitty6" id="dropDownGithub">Github</a>
-        <a href="http://thisismyemail.com" id="dropDownEmail">Email</a>
+        <a href="mailto:bradwhitlock6@gmail.com" id="dropDownEmail">Email</a>
       </div>
     );
   }
