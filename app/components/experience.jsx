@@ -6,7 +6,7 @@ let items  = {
     header: 'Tiko 3D',
     content : 'Created the first automated QA for Tiko’s firmware and software. Nightly' +
     ' tests continue to be run nightly on a Raspberry Pi through a Docker Image at Tiko.' +
-    ' During my time at Tiko I also Developed a Chatbot for Tiko\'s website.  The platform of choice was Node; it' +
+    ' During my time at Tiko I also developed a Chatbot for Tiko\'s website.  The platform of choice was Node; it' +
     ' was used to create a server, efficient database management and' +
     ' easy integration with other API’s. My time at Tiko was exciting, educational and an overall great experience.',
     image: './styles/images/tikos.jpg',
@@ -46,7 +46,7 @@ let items  = {
   securitron: {
     idnetity: 'securiTronNav',
     header: 'SecuriTron',
-    content: 'At University of Toronto Hacks, out team developed a home security lock using hardware such as Arduino, Thomas Edison boards, Leap Motion and a Pebble Watch.' +
+    content: 'At University of Toronto Hacks, our team developed a home security lock using hardware such as Arduino, Thomas Edison boards, Leap Motion and a Pebble Watch.' +
     ' Software implementation and bluetooth communication involved JavaScript, Java, Python, C, and Node.',
     image: './styles/images/leapMotion.jpg',
     align: false,

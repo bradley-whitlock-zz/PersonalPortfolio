@@ -27295,7 +27295,7 @@
 
 	    var _this = _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).call(this));
 
-	    _this.state = { details: 'Currently I am a second year Mechatronics Engineering Student at the University of Waterloo.' + ' I thrive on innovation and creation. I enjoy playing volleyball, hockey, bike, or almost anything' + ' that involves pushing myself or trying something new. In the future I hope to become a product designer and make ' + ' some of the coolest technology this world has ever seen!' };
+	    _this.state = { details: 'Currently I am a second year Mechatronics Engineering Student at the University of Waterloo.' + ' I thrive on innovation and creation. I enjoy playing volleyball, hockey, biking, and almost anything' + ' that involves pushing myself or trying something new. In the future I hope to become a product designer and make ' + ' some of the coolest technology this world has ever seen!' };
 	    return _this;
 	  }
 
@@ -27308,7 +27308,7 @@
 	        _react2.default.createElement(
 	          'h1',
 	          { id: 'aboutTitle' },
-	          ' Let me tell you about myself '
+	          ' LET ME TELL YOU ABOUT MYSELF '
 	        ),
 	        _react2.default.createElement(
 	          'div',
@@ -31288,7 +31288,7 @@
 	  tiko: {
 	    identity: 'tikoNav',
 	    header: 'Tiko 3D',
-	    content: 'Created the first automated QA for Tiko’s firmware and software. Nightly' + ' tests continue to be run nightly on a Raspberry Pi through a Docker Image at Tiko.' + ' During my time at Tiko I also Developed a Chatbot for Tiko\'s website.  The platform of choice was Node; it' + ' was used to create a server, efficient database management and' + ' easy integration with other API’s. My time at Tiko was exciting, educational and an overall great experience.',
+	    content: 'Created the first automated QA for Tiko’s firmware and software. Nightly' + ' tests continue to be run nightly on a Raspberry Pi through a Docker Image at Tiko.' + ' During my time at Tiko I also developed a Chatbot for Tiko\'s website.  The platform of choice was Node; it' + ' was used to create a server, efficient database management and' + ' easy integration with other API’s. My time at Tiko was exciting, educational and an overall great experience.',
 	    image: './styles/images/tikos.jpg',
 	    align: true,
 	    style: {
@@ -31321,7 +31321,7 @@
 	  securitron: {
 	    idnetity: 'securiTronNav',
 	    header: 'SecuriTron',
-	    content: 'At University of Toronto Hacks, out team developed a home security lock using hardware such as Arduino, Thomas Edison boards, Leap Motion and a Pebble Watch.' + ' Software implementation and bluetooth communication involved JavaScript, Java, Python, C, and Node.',
+	    content: 'At University of Toronto Hacks, our team developed a home security lock using hardware such as Arduino, Thomas Edison boards, Leap Motion and a Pebble Watch.' + ' Software implementation and bluetooth communication involved JavaScript, Java, Python, C, and Node.',
 	    image: './styles/images/leapMotion.jpg',
 	    align: false,
 	    style: {
