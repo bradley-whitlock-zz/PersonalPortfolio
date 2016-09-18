@@ -32,7 +32,7 @@ app.post('/mail', function(req, res) {
   var mailOptions = {
     from: req.body.email,
     to: 'bradwhitlock6@gmail.com',
-    subject: '[bradleywhitlock.com] Mail from ' + req.body.name,
+    subject: '[bradleywhitlock.com] Mail from: ' + req.body.name + ' with email: ' + req.body.email,
     text: req.body.message
   }
 
