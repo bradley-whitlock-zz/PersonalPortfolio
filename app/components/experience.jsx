@@ -4,10 +4,11 @@ let items  = {
   tiko : {
     identity: 'tikoNav',
     header: 'Tiko 3D',
-    content : 'Created the first automated testing platform for Tiko’s firmware and software. Nightly' +
-    ' builds are tests are currently being ran on a Raspberry Pi through a Docker Image at Tiko. ' +
-    'Developed a Chatbot for the Tiko website with Node.  Creating a server, using databases and' +
-    ' integration with other services API’s were all requirements for creating a user-friendly Chatbot.',
+    content : 'Created the first automated QA for Tiko’s firmware and software. Nightly' +
+    ' tests continue to be run nightly on a Raspberry Pi through a Docker Image at Tiko.' +
+    ' During my time at Tiko I also Developed a Chatbot for Tiko\'s website.  The platform of choice was Node; it' +
+    ' was used to create a server, efficient database management and' +
+    ' easy integration with other API’s. My time at Tiko was exciting, educational and an overall great experience.',
     image: './styles/images/tikos.jpg',
     align: true,
     style : {
@@ -18,9 +19,9 @@ let items  = {
   movies : {
     identity: 'moviesNav',
     header: 'Highland Cinemas',
-    content: 'Honed customer service skills by managing hundreds of consumers daily at theater. ' +
-    'Worked 40 – 50 hour weeks at a 5 screen movie theatre, responsible for concessions, cleaning and customer satisfaction.' +
-    'Assertively managed a crowd of 500 customers when theatre was at maximum capacity and people were required to exit.',
+    content: 'Honed customer service skills by managing hundreds of consumers daily at this independent 5 screen theater.' +
+    ' While working upwards of 45 hour weeks I became responsible for concessions, customer satisfaction, managing crowds of hundreds of people and food preparation.' +
+    ' I also developed my fabrication and design skills while performing maintenance and construction in and out of the theaters.',
     image: './styles/images/movies.jpg',
     align: false,
     style : {
@@ -30,23 +31,23 @@ let items  = {
   },
   scrabble : {
     identity: 'scrabbleNav',
-    header: 'ScrabbleTron 2020',
+    header: 'ScrabbleTron',
     image: './styles/images/scrabble.jpg',
-    content: 'Enjoyed creating a functional Scrabble Robot. Tasks included sensing tiles, engineering a ' +
-    'claw to pick up tiles, and translational movement in the x, y and z directions to move tiles into the correct location. ' +
-    'Created the search algorithm to calculate the highest scoring word for any scrabble hand. ' +
-    'Practical experience with a complete engineering project and developed understanding of problems during the design process.',
+    content: 'Enjoyed being part of a team that created a Scrabble Robot. Tasks included using color sensors, engineering a' +
+    ' claw to pick up tiles, and translational movement in all directions to move tiles into the correct location.' +
+    ' Created an algorithm to calculate the best word for any scrabble hand.' +
+    ' Gained practical experience with a complete engineering project and developed understanding of problems and solutions during the design process.',
     align: true,
     style: {
-      backgroundImage: 'url(./styles/images/scrabble.jpg',
+      backgroundImage: 'url(./styles/images/bwscrabble2.jpg',
       backgroundPosition: 'center',
     }
   },
   securitron: {
     idnetity: 'securiTronNav',
     header: 'SecuriTron',
-    content: 'Developed a home security lock using hardware such as Arduino, Thomas Edison, Leap Motion and Pebble Watch at U of T hacks. ' +
-    'Software implementation through Bluetooth involved JavaScript, Java, Python, Arduino (C), and Node.JS',
+    content: 'At University of Toronto Hacks, out team developed a home security lock using hardware such as Arduino, Thomas Edison boards, Leap Motion and a Pebble Watch.' +
+    ' Software implementation and bluetooth communication involved JavaScript, Java, Python, C, and Node.',
     image: './styles/images/leapMotion.jpg',
     align: false,
     style: {
@@ -57,23 +58,25 @@ let items  = {
   fuelCell : {
     identity: 'fuelCellNav',
     header: 'Fuel Cell Car',
-    content: 'Completed autonomous small-scale fuel cell car. Formulated understanding for fuel cell technology and application of this technology in modern designs. ' +
-    'Generated line following algorithm for the car to drive the required courses.',
+    content: 'Hands on work with an autonomous small-scale fuel cell car. Formulated understanding for fuel cell technology and application in modern designs.' +
+    ' Developed a line following algorithm for the fuel cell car to navigate through various courses.',
     image: './styles/images/fuelCell.jpg',
     align: true,
     style: {
-      backgroundImage: 'url(./styles/images/fuelCell.jpg',
+      backgroundImage: 'url(./styles/images/bwfuelcell.jpg',
       backgroundPosition: 'center',
     }
   },
   volleyball : {
     identity: 'volleyballNav',
     header: 'Durham Attack Team Captain',
-    content: 'Leader of elite volleyball team; led team to 5th place overall in Canada (2015).  Took a lead by example role on an underachieving team and led team/friends to victories across North America.',
+    content: 'Captain of an elite indoor volleyball team. After practicing and competing with the team for 10 hours per week, I led' +
+    ' the team to a 5th place overall finish in the 2016 Canadian Volleyball Championships.  Used a "Participative" leadership approach with' +
+    ' the team and led my friends to victories against teams from across North America.',
     image: './styles/images/volleyball.jpg',
     align: false,
     style: {
-      backgroundImage: 'url(./styles/images/volleyball.jpg)',
+      backgroundImage: 'url(./styles/images/bwvolleyball.png)',
       backgroundPosition: 'center'
     }
   }

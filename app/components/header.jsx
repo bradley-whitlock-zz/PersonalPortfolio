@@ -129,16 +129,16 @@ class ContactModal extends  React.Component {
           style={modalStyles}>
 
           <button onClick={this.closeModal} id="closeContactModal"> Close </button>
-          <h2 id="contactModalHeader"> PLEASE CONTACT BRAD ABOUT ANYTHING </h2>
+          <h2 id="contactModalHeader"> GIVE ME A SHOUT! </h2>
           <form className="contactForm">
-            <label className="inputHeader">  Enter Your Name Here </label>
-            <input className="inputField" placeholder='Tim Brown' type="text" value={this.state.name} onChange={this.handleChangeName} required />
+            <label className="inputHeader">  Enter your name here </label>
+            <input className="inputField" placeholder='John Smith' type="text" value={this.state.name} onChange={this.handleChangeName} required />
 
-            <label className="inputHeader"> Enter Your Email Here </label>
-            <input className="inputField" placeholder="tim.brown@youremail.com" value={this.state.email} onChange={this.handleChangeEmail} type="text" required/>
+            <label className="inputHeader"> Enter your email here </label>
+            <input className="inputField" placeholder="john.smith@gmail.com" value={this.state.email} onChange={this.handleChangeEmail} type="text" required/>
 
-            <label className="inputHeader"> Enter Your Message Here </label>
-            <input className="inputField" id="contactMessage" placeholder="What would you like to ask?" value={this.state.message} onChange={this.handleChangeMessage} type="text" required />
+            <label className="inputHeader"> Enter your message here </label>
+            <input className="inputField" id="contactMessage" placeholder="Hey Brad what is your favourite hockey team?" value={this.state.message} onChange={this.handleChangeMessage} type="text" required />
           </form>
           <div id="messageStatus">{this.state.messageStatus}</div>
           <button onClick={this.sendMessage} id="submitMessage"> Send </button>

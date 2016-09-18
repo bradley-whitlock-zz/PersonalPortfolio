@@ -27295,7 +27295,7 @@
 
 	    var _this = _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).call(this));
 
-	    _this.state = { details: 'Currently I am a second year Mechatronics Engineering Student at the University of Waterloo.' + ' I thrive on innovation and creation. In my spare time I play volleyball, hockey, bike, pretty much' + ' anything that involves pushing myself or being active. In the future I hope to become a product designer and make ' + ' some of the coolest technology this world has ever seen!' };
+	    _this.state = { details: 'Currently I am a second year Mechatronics Engineering Student at the University of Waterloo.' + ' I thrive on innovation and creation. I enjoy playing volleyball, hockey, bike, or almost anything' + ' that involves pushing myself or trying something new. In the future I hope to become a product designer and make ' + ' some of the coolest technology this world has ever seen!' };
 	    return _this;
 	  }
 
@@ -27308,12 +27308,12 @@
 	        _react2.default.createElement(
 	          'h1',
 	          { id: 'aboutTitle' },
-	          ' LET ME TELL YOU ABOUT MYSELF '
+	          ' Let me tell you about myself '
 	        ),
 	        _react2.default.createElement(
 	          'div',
 	          { id: 'topRow' },
-	          _react2.default.createElement('img', { className: 'bradPics', id: 'pic1', src: './styles/images/brad2.jpg', alt: 'Brad #1' }),
+	          _react2.default.createElement('img', { className: 'bradPics', id: 'pic1', src: './styles/images/brad4.jpg', alt: 'Brad #1' }),
 	          _react2.default.createElement('img', { className: 'bradPics', id: 'pic2', src: './styles/images/brad3.jpg', alt: 'Brad #3' })
 	        ),
 	        _react2.default.createElement(
@@ -27324,7 +27324,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          { id: 'bottomRow' },
-	          _react2.default.createElement('img', { className: 'bradPics', id: 'pic3', src: './styles/images/brad4.jpg', alt: 'Brad #4' })
+	          _react2.default.createElement('img', { className: 'bradPics', id: 'pic3', src: './styles/images/brad2.jpg', alt: 'Brad #4' })
 	        )
 	      );
 	    }
@@ -27613,7 +27613,7 @@
 	          _react2.default.createElement(
 	            'h2',
 	            { id: 'contactModalHeader' },
-	            ' PLEASE CONTACT BRAD ABOUT ANYTHING '
+	            ' GIVE ME A SHOUT! '
 	          ),
 	          _react2.default.createElement(
 	            'form',
@@ -27621,21 +27621,21 @@
 	            _react2.default.createElement(
 	              'label',
 	              { className: 'inputHeader' },
-	              '  Enter Your Name Here '
+	              '  Enter your name here '
 	            ),
-	            _react2.default.createElement('input', { className: 'inputField', placeholder: 'Tim Brown', type: 'text', value: this.state.name, onChange: this.handleChangeName, required: true }),
+	            _react2.default.createElement('input', { className: 'inputField', placeholder: 'John Smith', type: 'text', value: this.state.name, onChange: this.handleChangeName, required: true }),
 	            _react2.default.createElement(
 	              'label',
 	              { className: 'inputHeader' },
-	              ' Enter Your Email Here '
+	              ' Enter your email here '
 	            ),
-	            _react2.default.createElement('input', { className: 'inputField', placeholder: 'tim.brown@youremail.com', value: this.state.email, onChange: this.handleChangeEmail, type: 'text', required: true }),
+	            _react2.default.createElement('input', { className: 'inputField', placeholder: 'john.smith@gmail.com', value: this.state.email, onChange: this.handleChangeEmail, type: 'text', required: true }),
 	            _react2.default.createElement(
 	              'label',
 	              { className: 'inputHeader' },
-	              ' Enter Your Message Here '
+	              ' Enter your message here '
 	            ),
-	            _react2.default.createElement('input', { className: 'inputField', id: 'contactMessage', placeholder: 'What would you like to ask?', value: this.state.message, onChange: this.handleChangeMessage, type: 'text', required: true })
+	            _react2.default.createElement('input', { className: 'inputField', id: 'contactMessage', placeholder: 'Hey Brad what is your favourite hockey team?', value: this.state.message, onChange: this.handleChangeMessage, type: 'text', required: true })
 	          ),
 	          _react2.default.createElement(
 	            'div',
@@ -31288,7 +31288,7 @@
 	  tiko: {
 	    identity: 'tikoNav',
 	    header: 'Tiko 3D',
-	    content: 'Created the first automated testing platform for Tiko’s firmware and software. Nightly' + ' builds are tests are currently being ran on a Raspberry Pi through a Docker Image at Tiko. ' + 'Developed a Chatbot for the Tiko website with Node.  Creating a server, using databases and' + ' integration with other services API’s were all requirements for creating a user-friendly Chatbot.',
+	    content: 'Created the first automated QA for Tiko’s firmware and software. Nightly' + ' tests continue to be run nightly on a Raspberry Pi through a Docker Image at Tiko.' + ' During my time at Tiko I also Developed a Chatbot for Tiko\'s website.  The platform of choice was Node; it' + ' was used to create a server, efficient database management and' + ' easy integration with other API’s. My time at Tiko was exciting, educational and an overall great experience.',
 	    image: './styles/images/tikos.jpg',
 	    align: true,
 	    style: {
@@ -31299,7 +31299,7 @@
 	  movies: {
 	    identity: 'moviesNav',
 	    header: 'Highland Cinemas',
-	    content: 'Honed customer service skills by managing hundreds of consumers daily at theater. ' + 'Worked 40 – 50 hour weeks at a 5 screen movie theatre, responsible for concessions, cleaning and customer satisfaction.' + 'Assertively managed a crowd of 500 customers when theatre was at maximum capacity and people were required to exit.',
+	    content: 'Honed customer service skills by managing hundreds of consumers daily at this independent 5 screen theater.' + ' While working upwards of 45 hour weeks I became responsible for concessions, customer satisfaction, managing crowds of hundreds of people and food preparation.' + ' I also developed my fabrication and design skills while performing maintenance and construction in and out of the theaters.',
 	    image: './styles/images/movies.jpg',
 	    align: false,
 	    style: {
@@ -31309,19 +31309,19 @@
 	  },
 	  scrabble: {
 	    identity: 'scrabbleNav',
-	    header: 'ScrabbleTron 2020',
+	    header: 'ScrabbleTron',
 	    image: './styles/images/scrabble.jpg',
-	    content: 'Enjoyed creating a functional Scrabble Robot. Tasks included sensing tiles, engineering a ' + 'claw to pick up tiles, and translational movement in the x, y and z directions to move tiles into the correct location. ' + 'Created the search algorithm to calculate the highest scoring word for any scrabble hand. ' + 'Practical experience with a complete engineering project and developed understanding of problems during the design process.',
+	    content: 'Enjoyed being part of a team that created a Scrabble Robot. Tasks included using color sensors, engineering a' + ' claw to pick up tiles, and translational movement in all directions to move tiles into the correct location.' + ' Created an algorithm to calculate the best word for any scrabble hand.' + ' Gained practical experience with a complete engineering project and developed understanding of problems and solutions during the design process.',
 	    align: true,
 	    style: {
-	      backgroundImage: 'url(./styles/images/scrabble.jpg',
+	      backgroundImage: 'url(./styles/images/bwscrabble2.jpg',
 	      backgroundPosition: 'center'
 	    }
 	  },
 	  securitron: {
 	    idnetity: 'securiTronNav',
 	    header: 'SecuriTron',
-	    content: 'Developed a home security lock using hardware such as Arduino, Thomas Edison, Leap Motion and Pebble Watch at U of T hacks. ' + 'Software implementation through Bluetooth involved JavaScript, Java, Python, Arduino (C), and Node.JS',
+	    content: 'At University of Toronto Hacks, out team developed a home security lock using hardware such as Arduino, Thomas Edison boards, Leap Motion and a Pebble Watch.' + ' Software implementation and bluetooth communication involved JavaScript, Java, Python, C, and Node.',
 	    image: './styles/images/leapMotion.jpg',
 	    align: false,
 	    style: {
@@ -31332,22 +31332,22 @@
 	  fuelCell: {
 	    identity: 'fuelCellNav',
 	    header: 'Fuel Cell Car',
-	    content: 'Completed autonomous small-scale fuel cell car. Formulated understanding for fuel cell technology and application of this technology in modern designs. ' + 'Generated line following algorithm for the car to drive the required courses.',
+	    content: 'Hands on work with an autonomous small-scale fuel cell car. Formulated understanding for fuel cell technology and application in modern designs.' + ' Developed a line following algorithm for the fuel cell car to navigate through various courses.',
 	    image: './styles/images/fuelCell.jpg',
 	    align: true,
 	    style: {
-	      backgroundImage: 'url(./styles/images/fuelCell.jpg',
+	      backgroundImage: 'url(./styles/images/bwfuelcell.jpg',
 	      backgroundPosition: 'center'
 	    }
 	  },
 	  volleyball: {
 	    identity: 'volleyballNav',
 	    header: 'Durham Attack Team Captain',
-	    content: 'Leader of elite volleyball team; led team to 5th place overall in Canada (2015).  Took a lead by example role on an underachieving team and led team/friends to victories across North America.',
+	    content: 'Captain of an elite indoor volleyball team. After practicing and competing with the team for 10 hours per week, I led' + ' the team to a 5th place overall finish in the 2016 Canadian Volleyball Championships.  Used a "Participative" leadership approach with' + ' the team and led my friends to victories against teams from across North America.',
 	    image: './styles/images/volleyball.jpg',
 	    align: false,
 	    style: {
-	      backgroundImage: 'url(./styles/images/volleyball.jpg)',
+	      backgroundImage: 'url(./styles/images/bwvolleyball.png)',
 	      backgroundPosition: 'center'
 	    }
 	  }

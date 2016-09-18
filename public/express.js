@@ -35,8 +35,7 @@ app.post('/mail', function(req, res) {
     subject: '[bradleywhitlock.com] Mail from ' + req.body.name,
     text: req.body.message
   }
-  console.log(credentials)
-  console.log('Request: ', req.body)
+
   transporter.sendMail(mailOptions, function(error, info) {
     if (error) {
       console.log('ERROR: ', error)
