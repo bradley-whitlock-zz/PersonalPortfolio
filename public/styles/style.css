@@ -1,19 +1,19 @@
 /* This is for the header options */
 
 @font-face {
-    font-family: 'MyHeaderFont';
-    src: url('./fonts/bebas.otf') format('woff2')
-    /*url('./fonts/antebras.ttf')  format('truetype')*/
-}
-
-@font-face {
-    font-family: 'MyBotFont';
-    src:url('./fonts/HelloBoomerang.ttf')
+    font-family: 'MyFont';
+    src: url('./fonts/coolvetica.ttf') format('woff2')
 }
 
 html, body {
     margin: 0;
     padding: 0;
+}
+
+
+html {
+    font-family: 'MyFont', Fallback, sans-serif;
+    letter-spacing: 2px;
 }
 
 #landingBackground {
@@ -77,7 +77,6 @@ html, body {
     top:0;
     color: white;
     background-color: black;
-    font-family: 'MyHeaderFont', Fallback, sans-serif;
     height: 80px;
     width: 100%;
     float: none;
@@ -100,7 +99,6 @@ html, body {
     color:lightgray;
 }
 #headerContact {
-    font-family: 'MyHeaderFont', Fallback, sans-serif;
     background: none;
     border: none;
     margin-right: 20px;
@@ -251,9 +249,14 @@ html, body {
 }
 
 #expNameItemHeader {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    border-radius: 4px;
     margin-top: 11px;
-    -webkit-filter: drop-shadow(1px 1px lightgrey);
-    filter: drop-shadow(1px 1px white);
+    padding: 0 25px 0 25px;
+    color: #31BEEC;
 }
 
 
@@ -287,7 +290,7 @@ html, body {
 .experienceListHeaderLeft, .experienceListContentLeft {
     position: absolute;
     float:left;
-    width: calc(40% - 50px);
+    width: calc(50% - 50px);
     left: 0;
     text-align: center;
     margin-left: 50px;
@@ -304,35 +307,32 @@ html, body {
 /* This is for the items whose text is on the right */
 .experienceListHeaderRight, .experienceListContentRight {
     float: right;
-    width: calc(40% - 50px);
+    width: calc(50% - 50px);
     margin-right: 50px;
     right: 0;
     text-align: center;
-    /*font-size: 20px;*/
 }
 
 /* This is for the images */
 .rightImageExperience, .leftImageExperience {
+    width: calc(45% - 50px);
     border-radius: 10px;
     opacity: 0.7;
     min-height: 400px;
     max-height: 650px;
+    display: inline;
 }
 .rightImageExperience {
     float: left;
-    width: calc(55% - 50px);
     margin-left: 50px;
     margin-right: 10px;
     left: 0;
-    display: inline;
 }
 .leftImageExperience {
     float: right;
-    width: calc(55% - 50px);
     right:0;
     margin-right: 50px;
     margin-left: 10px;
-    display: inline;
 }
 
 

@@ -31322,7 +31322,7 @@
 	    idnetity: 'securiTronNav',
 	    header: 'SecuriTron',
 	    content: 'At University of Toronto Hacks, our team developed a home security lock using hardware such as Arduino, Thomas Edison boards, Leap Motion and a Pebble Watch.' + ' Software implementation and bluetooth communication involved JavaScript, Java, Python, C, and Node.',
-	    image: './styles/images/leapMotion.jpg',
+	    image: './styles/images/leap-motion-color.jpg',
 	    align: false,
 	    style: {
 	      backgroundImage: 'url(./styles/images/leapMotion.jpg',
@@ -31333,7 +31333,7 @@
 	    identity: 'fuelCellNav',
 	    header: 'Fuel Cell Car',
 	    content: 'Hands on work with an autonomous small-scale fuel cell car. Formulated understanding for fuel cell technology and application in modern designs.' + ' Developed a line following algorithm for the fuel cell car to navigate through various courses.',
-	    image: './styles/images/fuelCell.jpg',
+	    image: './styles/images/fuel-cell-color.jpg',
 	    align: true,
 	    style: {
 	      backgroundImage: 'url(./styles/images/bwfuelcell.jpg',
