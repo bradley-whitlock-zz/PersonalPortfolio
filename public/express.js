@@ -2,7 +2,7 @@
 var express = require('express')
 var bodyParser = require('body-parser')
 var nodemailer = require('nodemailer')
-var credentials = require('../../credential.json')
+//var credentials = require('../../credential.json')
 
 var app = express()
 
@@ -20,7 +20,7 @@ app.get('/*', function (req, res) {
 
 // Create reusable object
 
-
+/*
 app.post('/mail', function(req, res) {
   var transporter = nodemailer.createTransport({
     service: 'Gmail',
@@ -51,7 +51,7 @@ app.post('/mail', function(req, res) {
 
 
 })
-
+*/
 app.listen(app.get('port'), function () {
   console.log("listening on port " + app.get('port'))
 })

@@ -8,7 +8,7 @@
     "url": "https://github.com/bwhitty6/personal-website"
   },
   "scripts": {
-    "start": "webpack && nodemon public/express",
+    "start": "node public/express.js",
     "build": "webpack --progress --colors",
     "server": "sudo PORT=80 node public/express.js"
   },
@@ -34,5 +34,8 @@
     "superagent": "^2.2.0",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
+  },
+  "engines": {
+    "node":"7.7.2"
   }
 }
