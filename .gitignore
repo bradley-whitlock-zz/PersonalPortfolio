@@ -1,11 +1,8 @@
 node_modules
-
 .npm-ignore
 
-brad.jpg
-
-personalWebsite.pem
-
-credentials.json
-
-credential.json
+*.log
+*.jpg
+*.png
+*.pem
+*.ico

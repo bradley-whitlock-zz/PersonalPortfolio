@@ -39,7 +39,7 @@ let items  = {
     ' Gained practical experience with a complete engineering project and developed understanding of problems and solutions during the design process.',
     align: true,
     style: {
-      backgroundImage: 'url(./styles/images/bwscrabble2.jpg',
+      backgroundImage: 'url(./styles/images/bwscrabble2.jpg)',
       backgroundPosition: 'center',
     }
   },
@@ -51,32 +51,31 @@ let items  = {
     image: './styles/images/leap-motion-color.jpg',
     align: false,
     style: {
-      backgroundImage: 'url(./styles/images/leapMotion.jpg',
-      backgroundPosition: 'center',
-    }
-  },
-  fuelCell : {
-    identity: 'fuelCellNav',
-    header: 'Fuel Cell Car',
-    content: 'Hands on work with an autonomous small-scale fuel cell car. Formulated understanding for fuel cell technology and application in modern designs.' +
-    ' Developed a line following algorithm for the fuel cell car to navigate through various courses.',
-    image: './styles/images/fuel-cell-color.jpg',
-    align: true,
-    style: {
-      backgroundImage: 'url(./styles/images/bwfuelcell.jpg',
+      backgroundImage: 'url(./styles/images/leapMotion.jpg)',
       backgroundPosition: 'center',
     }
   },
   volleyball : {
     identity: 'volleyballNav',
-    header: 'Durham Attack Team Captain',
+    header: 'Durham Attack',
     content: 'Captain of an elite indoor volleyball team. After practicing and competing with the team for 10 hours per week, I led' +
     ' the team to a 5th place overall finish in the 2016 Canadian Volleyball Championships.  Used a "Participative" leadership approach with' +
     ' the team and led my friends to victories against teams from across North America.',
     image: './styles/images/volleyball.jpg',
-    align: false,
+    align: true,
     style: {
       backgroundImage: 'url(./styles/images/bwvolleyball.png)',
+      backgroundPosition: 'center'
+    }
+  },
+  rubikloud : {
+    identity: 'rubiNav',
+    header: 'Rubikloud',
+    content: 'Data Engineering intern at Rubikloud for 4 months',
+    image: './styles/images/rubi_logo.png',
+    align: false,
+    style: {
+      backgroundImage: 'url(./styles/images/bw_rubi.png)',
       backgroundPosition: 'center'
     }
   }
@@ -94,19 +93,19 @@ class Experience extends React.Component {
       <div id="experiencePage">
         <h1 id="experiencePageHeader"> PERSONAL EXPERIENCE </h1>
         <div id="expNames">
+          <ExperienceItems changeDetails={this.updateDetails} data={items.rubikloud} />
           <ExperienceItems changeDetails={this.updateDetails} data={items.tiko} />
           <ExperienceItems changeDetails={this.updateDetails} data={items.movies} />
           <ExperienceItems changeDetails={this.updateDetails} data={items.scrabble} />
           <ExperienceItems changeDetails={this.updateDetails} data={items.securitron} />
-          <ExperienceItems changeDetails={this.updateDetails} data={items.fuelCell} />
           <ExperienceItems changeDetails={this.updateDetails} data={items.volleyball} />
         </div>
         <div id="expDetails">
+          <ExperienceDetails data={items.rubikloud} />
           <ExperienceDetails data={items.tiko} />
           <ExperienceDetails data={items.movies} />
           <ExperienceDetails data={items.scrabble}/>
           <ExperienceDetails data={items.securitron}/>
-          <ExperienceDetails data={items.fuelCell}/>
           <ExperienceDetails data={items.volleyball}/>
         </div>
         <a href='#experiencePageHeader' id="expNameItem" >
